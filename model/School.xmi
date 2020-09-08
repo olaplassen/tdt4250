@@ -36,7 +36,11 @@
       <ordinaryPrograms
           programName="DataScience Master">
         <semsters
-            semesterCreditRequirements="30.0"/>
+            semesterCreditRequirements="30.0">
+          <electiveCourses/>
+          <electiveCourses/>
+          <mandatoryCourses/>
+        </semsters>
       </ordinaryPrograms>
     </programYear>
   </programs>
@@ -46,6 +50,18 @@
       name="Ola Plassen"
       number="91324198"
       id="2873">
-    <individualStudyPlan/>
+    <individualStudyPlan>
+      <selectedSemesters
+          semesterName="Spring 2021"/>
+      <selectedSemesters
+          semesterName="Fall 2020">
+        <semesters>
+          <electiveCourses/>
+          <electiveCourses/>
+          <mandatoryCourses/>
+          <mandatoryCourses/>
+        </semesters>
+      </selectedSemesters>
+    </individualStudyPlan>
   </students>
 </MyEcore:School>

@@ -21,8 +21,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Year/programsWithSpecialisation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Year/year"/>
     </genClasses>
-    <genClasses ecoreClass="My.ecore#//OrdinaryProgram">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//OrdinaryProgram/semsters"/>
+    <genClasses ecoreClass="My.ecore#//ProgramWithNoSpecialication">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//ProgramWithNoSpecialication/semsters"/>
     </genClasses>
     <genClasses ecoreClass="My.ecore#//ProgramWithSpecialisation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//ProgramWithSpecialisation/specilisations"/>
@@ -55,6 +55,7 @@
     </genClasses>
     <genClasses ecoreClass="My.ecore#//SelectedSemester">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//SelectedSemester/semesters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//SelectedSemester/semesterName"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

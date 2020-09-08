@@ -254,8 +254,9 @@ public class MyEcoreValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (!(credit).equals(5.0f)) {
-			if (diagnost\cs.add
+		if (credit != 5.0f) {
+			if (diagnostics != null) {
+				diagnostics.add
 					(createDiagnostic
 						(Diagnostic.ERROR,
 						 DIAGNOSTIC_SOURCE,
