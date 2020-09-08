@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MyEcore:School
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:MyEcore="platform:/plugin/tdt4250/model/my.ecore"
+    xsi:schemaLocation="platform:/plugin/tdt4250/model/my.ecore My.ecore"
+    schoolName="NTNU">
+  <programs
+      programName="Informatics Master">
+    <programYear
+        year="2020">
+      <programsWithSpecialisation
+          programName="Informatics Master">
+        <specilisations
+            name="Software">
+          <semesters
+              semesterCreditRequirements="30.0">
+            <electiveCourses
+                name="Introduction to AI"
+                code="TDT4136"
+                credit="7.5"/>
+            <mandatoryCourses
+                name="Informasjonssystemer"
+                code="TDT4175"
+                credit="7.5"/>
+          </semesters>
+        </specilisations>
+      </programsWithSpecialisation>
+    </programYear>
+  </programs>
+  <programs
+      programName="DataScience Master">
+    <programYear
+        year="2019">
+      <ordinaryPrograms
+          programName="DataScience Master">
+        <semsters
+            semesterCreditRequirements="30.0"/>
+      </ordinaryPrograms>
+    </programYear>
+  </programs>
+  <programs
+      programName="Informatics Bachelor"/>
+  <students
+      name="Ola Plassen"
+      number="91324198"
+      id="2873">
+    <individualStudyPlan/>
+  </students>
+</MyEcore:School>

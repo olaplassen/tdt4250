@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/tdt4250/src" modelPluginID="tdt4250" modelName="My"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>My.ecore</foreignModel>
+  <genPackages prefix="MyEcore" basePackage="tdt4250" disposableProviderFactory="true"
+      ecorePackage="My.ecore#/">
+    <genClasses ecoreClass="My.ecore#//School">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//School/programs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//School/schoolName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//School/students"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Program/programName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Program/programCreditRequirements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Program/programYear"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Year">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Year/ordinaryPrograms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Year/programsWithSpecialisation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Year/year"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//OrdinaryProgram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//OrdinaryProgram/semsters"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//ProgramWithSpecialisation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//ProgramWithSpecialisation/specilisations"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Specialisation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Specialisation/semesters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Specialisation/name"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Semester">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Semester/electiveCourses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Semester/mandatoryCourses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Semester/semesterCreditRequirements"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Course/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Course/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Course/credit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Course/level"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Student">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Student/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Student/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Student/id"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference My.ecore#//Student/school"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Student/individualStudyPlan"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//IndividualStudyPlan">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference My.ecore#//IndividualStudyPlan/selectedSemesters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//IndividualStudyPlan/results"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//SelectedSemester">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//SelectedSemester/semesters"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
