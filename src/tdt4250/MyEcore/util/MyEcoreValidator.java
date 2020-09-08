@@ -92,8 +92,8 @@ public class MyEcoreValidator extends EObjectValidator {
 				return validateProgram((Program)value, diagnostics, context);
 			case MyEcorePackage.YEAR:
 				return validateYear((Year)value, diagnostics, context);
-			case MyEcorePackage.ORDINARY_PROGRAM:
-				return validateOrdinaryProgram((OrdinaryProgram)value, diagnostics, context);
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION:
+				return validateProgramWithNoSpecialication((ProgramWithNoSpecialication)value, diagnostics, context);
 			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION:
 				return validateProgramWithSpecialisation((ProgramWithSpecialisation)value, diagnostics, context);
 			case MyEcorePackage.SPECIALISATION:
@@ -108,6 +108,8 @@ public class MyEcoreValidator extends EObjectValidator {
 				return validateIndividualStudyPlan((IndividualStudyPlan)value, diagnostics, context);
 			case MyEcorePackage.SELECTED_SEMESTER:
 				return validateSelectedSemester((SelectedSemester)value, diagnostics, context);
+			case MyEcorePackage.COURSE_CODE:
+				return validateCourseCode((String)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -145,8 +147,8 @@ public class MyEcoreValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOrdinaryProgram(OrdinaryProgram ordinaryProgram, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(ordinaryProgram, diagnostics, context);
+	public boolean validateProgramWithNoSpecialication(ProgramWithNoSpecialication programWithNoSpecialication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(programWithNoSpecialication, diagnostics, context);
 	}
 
 	/**
@@ -248,13 +250,17 @@ public class MyEcoreValidator extends EObjectValidator {
 	public boolean validateCourse_correctCredit(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		
 		float credit = course.getCredit();
+		float availableCredit[] = {5.0f,7.5f,10.0f,15.0f,20.0f,25.0f,30.0f};
 		
+		for (int i = 0; i < availableCredit.length; i++) {
+			if (credit != availableCredit[i]) {
+				
+			}
+			
+		}
 		
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (credit != 5.0f) {
+//????????
+		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -277,7 +283,52 @@ public class MyEcoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStudent(Student student, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(student, diagnostics, context);
+		if (!validate_NoCircularContainment(student, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(student, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(student, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(student, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(student, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(student, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(student, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(student, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(student, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStudent_nameCharacters(student, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the nameCharacters constraint of '<em>Student</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean validateStudent_nameCharacters(Student student, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	
+		if (! allowedCharacters(student.getFirstName()) && ! allowedCharacters(student.getLastName())) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "nameCharacters", getObjectLabel(student, context) },
+						 new Object[] { student },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean allowedCharacters(String name) {
+	    for (int i = 0; i < name.length(); i++) {
+	        char c = name.charAt(i);
+	        if (! (Character.isLetter(c) || c == ' ' || c == '-' || c== '.')) {
+	            return false;
+	        }
+	    }
+	    return true;
 	}
 
 	/**
@@ -296,6 +347,15 @@ public class MyEcoreValidator extends EObjectValidator {
 	 */
 	public boolean validateSelectedSemester(SelectedSemester selectedSemester, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(selectedSemester, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseCode(String courseCode, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

@@ -3,6 +3,7 @@
 package tdt4250.MyEcore.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -59,7 +60,7 @@ public class MyEcoreFactoryImpl extends EFactoryImpl implements MyEcoreFactory {
 			case MyEcorePackage.SCHOOL: return createSchool();
 			case MyEcorePackage.PROGRAM: return createProgram();
 			case MyEcorePackage.YEAR: return createYear();
-			case MyEcorePackage.ORDINARY_PROGRAM: return createOrdinaryProgram();
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION: return createProgramWithNoSpecialication();
 			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION: return createProgramWithSpecialisation();
 			case MyEcorePackage.SPECIALISATION: return createSpecialisation();
 			case MyEcorePackage.SEMESTER: return createSemester();
@@ -69,6 +70,36 @@ public class MyEcoreFactoryImpl extends EFactoryImpl implements MyEcoreFactory {
 			case MyEcorePackage.SELECTED_SEMESTER: return createSelectedSemester();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case MyEcorePackage.COURSE_CODE:
+				return createCourseCodeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case MyEcorePackage.COURSE_CODE:
+				return convertCourseCodeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -107,9 +138,9 @@ public class MyEcoreFactoryImpl extends EFactoryImpl implements MyEcoreFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OrdinaryProgram createOrdinaryProgram() {
-		OrdinaryProgramImpl ordinaryProgram = new OrdinaryProgramImpl();
-		return ordinaryProgram;
+	public ProgramWithNoSpecialication createProgramWithNoSpecialication() {
+		ProgramWithNoSpecialicationImpl programWithNoSpecialication = new ProgramWithNoSpecialicationImpl();
+		return programWithNoSpecialication;
 	}
 
 	/**
@@ -180,6 +211,27 @@ public class MyEcoreFactoryImpl extends EFactoryImpl implements MyEcoreFactory {
 	public SelectedSemester createSelectedSemester() {
 		SelectedSemesterImpl selectedSemester = new SelectedSemesterImpl();
 		return selectedSemester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String createCourseCodeFromString(EDataType eDataType, String initialValue) {
+		if (! initialValue.matches("[A-Z]+[0-9])+")) {
+			throw new IllegalArgumentException("Wrong Course code format");
+		}
+		return (String)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertCourseCodeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

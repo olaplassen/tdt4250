@@ -2,14 +2,19 @@
  */
 package tdt4250.MyEcore.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import tdt4250.MyEcore.IndividualStudyPlan;
 import tdt4250.MyEcore.MyEcorePackage;
 import tdt4250.MyEcore.SelectedSemester;
@@ -30,14 +35,14 @@ import tdt4250.MyEcore.SelectedSemester;
  */
 public class IndividualStudyPlanImpl extends MinimalEObjectImpl.Container implements IndividualStudyPlan {
 	/**
-	 * The cached value of the '{@link #getSelectedSemesters() <em>Selected Semesters</em>}' reference.
+	 * The cached value of the '{@link #getSelectedSemesters() <em>Selected Semesters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSelectedSemesters()
 	 * @generated
 	 * @ordered
 	 */
-	protected SelectedSemester selectedSemesters;
+	protected EList<SelectedSemester> selectedSemesters;
 
 	/**
 	 * The default value of the '{@link #getResults() <em>Results</em>}' attribute.
@@ -83,37 +88,11 @@ public class IndividualStudyPlanImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectedSemester getSelectedSemesters() {
-		if (selectedSemesters != null && selectedSemesters.eIsProxy()) {
-			InternalEObject oldSelectedSemesters = (InternalEObject)selectedSemesters;
-			selectedSemesters = (SelectedSemester)eResolveProxy(oldSelectedSemesters);
-			if (selectedSemesters != oldSelectedSemesters) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS, oldSelectedSemesters, selectedSemesters));
-			}
+	public EList<SelectedSemester> getSelectedSemesters() {
+		if (selectedSemesters == null) {
+			selectedSemesters = new EObjectContainmentEList<SelectedSemester>(SelectedSemester.class, this, MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS);
 		}
 		return selectedSemesters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SelectedSemester basicGetSelectedSemesters() {
-		return selectedSemesters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectedSemesters(SelectedSemester newSelectedSemesters) {
-		SelectedSemester oldSelectedSemesters = selectedSemesters;
-		selectedSemesters = newSelectedSemesters;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS, oldSelectedSemesters, selectedSemesters));
 	}
 
 	/**
@@ -143,11 +122,24 @@ public class IndividualStudyPlanImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS:
+				return ((InternalEList<?>)getSelectedSemesters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS:
-				if (resolve) return getSelectedSemesters();
-				return basicGetSelectedSemesters();
+				return getSelectedSemesters();
 			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__RESULTS:
 				return getResults();
 		}
@@ -159,11 +151,13 @@ public class IndividualStudyPlanImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS:
-				setSelectedSemesters((SelectedSemester)newValue);
+				getSelectedSemesters().clear();
+				getSelectedSemesters().addAll((Collection<? extends SelectedSemester>)newValue);
 				return;
 			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__RESULTS:
 				setResults((String)newValue);
@@ -181,7 +175,7 @@ public class IndividualStudyPlanImpl extends MinimalEObjectImpl.Container implem
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS:
-				setSelectedSemesters((SelectedSemester)null);
+				getSelectedSemesters().clear();
 				return;
 			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__RESULTS:
 				setResults(RESULTS_EDEFAULT);
@@ -199,7 +193,7 @@ public class IndividualStudyPlanImpl extends MinimalEObjectImpl.Container implem
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS:
-				return selectedSemesters != null;
+				return selectedSemesters != null && !selectedSemesters.isEmpty();
 			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__RESULTS:
 				return RESULTS_EDEFAULT == null ? results != null : !RESULTS_EDEFAULT.equals(results);
 		}

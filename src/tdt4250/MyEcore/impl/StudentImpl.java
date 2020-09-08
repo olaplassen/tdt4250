@@ -27,6 +27,8 @@ import tdt4250.MyEcore.Student;
  * </p>
  * <ul>
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getFirstName <em>First Name</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getLastName <em>Last Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getId <em>Id</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getSchool <em>School</em>}</li>
@@ -55,6 +57,26 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FIRST_NAME_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LAST_NAME_EDEFAULT = null;
 
 	/**
 	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
@@ -144,6 +166,63 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.STUDENT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getFirstName() {
+		if (this.name == null) {
+			return null;
+		}
+		int pos = name.lastIndexOf(' ');
+		if (pos < 0) {
+			return null;
+		}
+		return name.substring(0, pos).trim();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setFirstName(String newFirstName) {
+		
+		if (newFirstName == null) {
+			newFirstName = "?";
+		}
+		setName(newFirstName + " " + getLastName());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getLastName() {
+		if (this.name == null) {
+			return "?";
+		}
+		int pos = name.lastIndexOf(' ');
+		if (pos < 0) {
+			return name;
+		}
+		return name.substring(pos + 1);
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setLastName(String newLastName) {
+		if (newLastName == null) {
+			newLastName = "?";
+		}
+		setName(getFirstName() + " " + newLastName);
 	}
 
 	/**
@@ -272,6 +351,7 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.STUDENT__INDIVIDUAL_STUDY_PLAN, newIndividualStudyPlan, newIndividualStudyPlan));
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -328,6 +408,10 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 		switch (featureID) {
 			case MyEcorePackage.STUDENT__NAME:
 				return getName();
+			case MyEcorePackage.STUDENT__FIRST_NAME:
+				return getFirstName();
+			case MyEcorePackage.STUDENT__LAST_NAME:
+				return getLastName();
 			case MyEcorePackage.STUDENT__NUMBER:
 				return getNumber();
 			case MyEcorePackage.STUDENT__ID:
@@ -350,6 +434,12 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 		switch (featureID) {
 			case MyEcorePackage.STUDENT__NAME:
 				setName((String)newValue);
+				return;
+			case MyEcorePackage.STUDENT__FIRST_NAME:
+				setFirstName((String)newValue);
+				return;
+			case MyEcorePackage.STUDENT__LAST_NAME:
+				setLastName((String)newValue);
 				return;
 			case MyEcorePackage.STUDENT__NUMBER:
 				setNumber((Integer)newValue);
@@ -378,6 +468,12 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 			case MyEcorePackage.STUDENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case MyEcorePackage.STUDENT__FIRST_NAME:
+				setFirstName(FIRST_NAME_EDEFAULT);
+				return;
+			case MyEcorePackage.STUDENT__LAST_NAME:
+				setLastName(LAST_NAME_EDEFAULT);
+				return;
 			case MyEcorePackage.STUDENT__NUMBER:
 				setNumber(NUMBER_EDEFAULT);
 				return;
@@ -404,6 +500,10 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 		switch (featureID) {
 			case MyEcorePackage.STUDENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case MyEcorePackage.STUDENT__FIRST_NAME:
+				return FIRST_NAME_EDEFAULT == null ? getFirstName() != null : !FIRST_NAME_EDEFAULT.equals(getFirstName());
+			case MyEcorePackage.STUDENT__LAST_NAME:
+				return LAST_NAME_EDEFAULT == null ? getLastName() != null : !LAST_NAME_EDEFAULT.equals(getLastName());
 			case MyEcorePackage.STUDENT__NUMBER:
 				return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
 			case MyEcorePackage.STUDENT__ID:

@@ -80,8 +80,8 @@ public class MyEcoreAdapterFactory extends AdapterFactoryImpl {
 				return createYearAdapter();
 			}
 			@Override
-			public Adapter caseOrdinaryProgram(OrdinaryProgram object) {
-				return createOrdinaryProgramAdapter();
+			public Adapter caseProgramWithNoSpecialication(ProgramWithNoSpecialication object) {
+				return createProgramWithNoSpecialicationAdapter();
 			}
 			@Override
 			public Adapter caseProgramWithSpecialisation(ProgramWithSpecialisation object) {
@@ -174,16 +174,16 @@ public class MyEcoreAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tdt4250.MyEcore.OrdinaryProgram <em>Ordinary Program</em>}'.
+	 * Creates a new adapter for an object of class '{@link tdt4250.MyEcore.ProgramWithNoSpecialication <em>Program With No Specialication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tdt4250.MyEcore.OrdinaryProgram
+	 * @see tdt4250.MyEcore.ProgramWithNoSpecialication
 	 * @generated
 	 */
-	public Adapter createOrdinaryProgramAdapter() {
+	public Adapter createProgramWithNoSpecialicationAdapter() {
 		return null;
 	}
 

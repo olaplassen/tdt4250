@@ -17,11 +17,9 @@
           <semesters
               semesterCreditRequirements="30.0">
             <electiveCourses
-                name="Introduction to AI"
                 code="TDT4136"
                 credit="7.5"/>
             <mandatoryCourses
-                name="Informasjonssystemer"
                 code="TDT4175"
                 credit="7.5"/>
           </semesters>
@@ -47,9 +45,10 @@
   <programs
       programName="Informatics Bachelor"/>
   <students
-      name="Ola Plassen"
+      firstName="Ola"
       number="91324198"
-      id="2873">
+      id="2586"
+      lastName="Plassen">
     <individualStudyPlan>
       <selectedSemesters
           semesterName="Spring 2021"/>
@@ -58,7 +57,6 @@
         <semesters>
           <electiveCourses/>
           <electiveCourses/>
-          <mandatoryCourses/>
           <mandatoryCourses/>
         </semesters>
       </selectedSemesters>

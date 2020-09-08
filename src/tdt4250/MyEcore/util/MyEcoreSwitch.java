@@ -84,10 +84,10 @@ public class MyEcoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MyEcorePackage.ORDINARY_PROGRAM: {
-				OrdinaryProgram ordinaryProgram = (OrdinaryProgram)theEObject;
-				T result = caseOrdinaryProgram(ordinaryProgram);
-				if (result == null) result = caseProgram(ordinaryProgram);
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION: {
+				ProgramWithNoSpecialication programWithNoSpecialication = (ProgramWithNoSpecialication)theEObject;
+				T result = caseProgramWithNoSpecialication(programWithNoSpecialication);
+				if (result == null) result = caseProgram(programWithNoSpecialication);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -184,17 +184,17 @@ public class MyEcoreSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Ordinary Program</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Program With No Specialication</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Ordinary Program</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Program With No Specialication</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOrdinaryProgram(OrdinaryProgram object) {
+	public T caseProgramWithNoSpecialication(ProgramWithNoSpecialication object) {
 		return null;
 	}
 

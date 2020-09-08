@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tdt4250.MyEcore.MyEcorePackage;
-import tdt4250.MyEcore.OrdinaryProgram;
+import tdt4250.MyEcore.ProgramWithNoSpecialication;
 import tdt4250.MyEcore.ProgramWithSpecialisation;
 import tdt4250.MyEcore.Year;
 
@@ -40,7 +40,7 @@ public class YearImpl extends MinimalEObjectImpl.Container implements Year {
 	 * @generated
 	 * @ordered
 	 */
-	protected OrdinaryProgram ordinaryPrograms;
+	protected ProgramWithNoSpecialication ordinaryPrograms;
 
 	/**
 	 * The cached value of the '{@link #getProgramsWithSpecialisation() <em>Programs With Specialisation</em>}' containment reference.
@@ -96,7 +96,7 @@ public class YearImpl extends MinimalEObjectImpl.Container implements Year {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OrdinaryProgram getOrdinaryPrograms() {
+	public ProgramWithNoSpecialication getOrdinaryPrograms() {
 		return ordinaryPrograms;
 	}
 
@@ -105,8 +105,8 @@ public class YearImpl extends MinimalEObjectImpl.Container implements Year {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOrdinaryPrograms(OrdinaryProgram newOrdinaryPrograms, NotificationChain msgs) {
-		OrdinaryProgram oldOrdinaryPrograms = ordinaryPrograms;
+	public NotificationChain basicSetOrdinaryPrograms(ProgramWithNoSpecialication newOrdinaryPrograms, NotificationChain msgs) {
+		ProgramWithNoSpecialication oldOrdinaryPrograms = ordinaryPrograms;
 		ordinaryPrograms = newOrdinaryPrograms;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyEcorePackage.YEAR__ORDINARY_PROGRAMS, oldOrdinaryPrograms, newOrdinaryPrograms);
@@ -120,7 +120,7 @@ public class YearImpl extends MinimalEObjectImpl.Container implements Year {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOrdinaryPrograms(OrdinaryProgram newOrdinaryPrograms) {
+	public void setOrdinaryPrograms(ProgramWithNoSpecialication newOrdinaryPrograms) {
 		if (newOrdinaryPrograms != ordinaryPrograms) {
 			NotificationChain msgs = null;
 			if (ordinaryPrograms != null)
@@ -241,7 +241,7 @@ public class YearImpl extends MinimalEObjectImpl.Container implements Year {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MyEcorePackage.YEAR__ORDINARY_PROGRAMS:
-				setOrdinaryPrograms((OrdinaryProgram)newValue);
+				setOrdinaryPrograms((ProgramWithNoSpecialication)newValue);
 				return;
 			case MyEcorePackage.YEAR__PROGRAMS_WITH_SPECIALISATION:
 				setProgramsWithSpecialisation((ProgramWithSpecialisation)newValue);
@@ -262,7 +262,7 @@ public class YearImpl extends MinimalEObjectImpl.Container implements Year {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case MyEcorePackage.YEAR__ORDINARY_PROGRAMS:
-				setOrdinaryPrograms((OrdinaryProgram)null);
+				setOrdinaryPrograms((ProgramWithNoSpecialication)null);
 				return;
 			case MyEcorePackage.YEAR__PROGRAMS_WITH_SPECIALISATION:
 				setProgramsWithSpecialisation((ProgramWithSpecialisation)null);

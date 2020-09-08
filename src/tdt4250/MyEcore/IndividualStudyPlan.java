@@ -2,6 +2,7 @@
  */
 package tdt4250.MyEcore;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,26 +24,16 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface IndividualStudyPlan extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Selected Semesters</b></em>' reference.
+	 * Returns the value of the '<em><b>Selected Semesters</b></em>' containment reference list.
+	 * The list contents are of type {@link tdt4250.MyEcore.SelectedSemester}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selected Semesters</em>' reference.
-	 * @see #setSelectedSemesters(SelectedSemester)
+	 * @return the value of the '<em>Selected Semesters</em>' containment reference list.
 	 * @see tdt4250.MyEcore.MyEcorePackage#getIndividualStudyPlan_SelectedSemesters()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	SelectedSemester getSelectedSemesters();
-
-	/**
-	 * Sets the value of the '{@link tdt4250.MyEcore.IndividualStudyPlan#getSelectedSemesters <em>Selected Semesters</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selected Semesters</em>' reference.
-	 * @see #getSelectedSemesters()
-	 * @generated
-	 */
-	void setSelectedSemesters(SelectedSemester value);
+	EList<SelectedSemester> getSelectedSemesters();
 
 	/**
 	 * Returns the value of the '<em><b>Results</b></em>' attribute.

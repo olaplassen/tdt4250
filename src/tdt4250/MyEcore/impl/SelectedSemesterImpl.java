@@ -24,6 +24,7 @@ import tdt4250.MyEcore.Semester;
  * </p>
  * <ul>
  *   <li>{@link tdt4250.MyEcore.impl.SelectedSemesterImpl#getSemesters <em>Semesters</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.SelectedSemesterImpl#getSemesterName <em>Semester Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +39,25 @@ public class SelectedSemesterImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected Semester semesters;
+
+	/**
+	 * The default value of the '{@link #getSemesterName() <em>Semester Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemesterName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SEMESTER_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getSemesterName() <em>Semester Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemesterName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String semesterName = SEMESTER_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,6 +126,27 @@ public class SelectedSemesterImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSemesterName() {
+		return semesterName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSemesterName(String newSemesterName) {
+		String oldSemesterName = semesterName;
+		semesterName = newSemesterName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.SELECTED_SEMESTER__SEMESTER_NAME, oldSemesterName, semesterName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -125,6 +166,8 @@ public class SelectedSemesterImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case MyEcorePackage.SELECTED_SEMESTER__SEMESTERS:
 				return getSemesters();
+			case MyEcorePackage.SELECTED_SEMESTER__SEMESTER_NAME:
+				return getSemesterName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,6 +182,9 @@ public class SelectedSemesterImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case MyEcorePackage.SELECTED_SEMESTER__SEMESTERS:
 				setSemesters((Semester)newValue);
+				return;
+			case MyEcorePackage.SELECTED_SEMESTER__SEMESTER_NAME:
+				setSemesterName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -155,6 +201,9 @@ public class SelectedSemesterImpl extends MinimalEObjectImpl.Container implement
 			case MyEcorePackage.SELECTED_SEMESTER__SEMESTERS:
 				setSemesters((Semester)null);
 				return;
+			case MyEcorePackage.SELECTED_SEMESTER__SEMESTER_NAME:
+				setSemesterName(SEMESTER_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -169,8 +218,26 @@ public class SelectedSemesterImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case MyEcorePackage.SELECTED_SEMESTER__SEMESTERS:
 				return semesters != null;
+			case MyEcorePackage.SELECTED_SEMESTER__SEMESTER_NAME:
+				return SEMESTER_NAME_EDEFAULT == null ? semesterName != null : !SEMESTER_NAME_EDEFAULT.equals(semesterName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (semesterName: ");
+		result.append(semesterName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SelectedSemesterImpl

@@ -11,23 +11,23 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tdt4250.MyEcore.MyEcorePackage;
-import tdt4250.MyEcore.OrdinaryProgram;
+import tdt4250.MyEcore.ProgramWithNoSpecialication;
 import tdt4250.MyEcore.Semester;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Ordinary Program</b></em>'.
+ * An implementation of the model object '<em><b>Program With No Specialication</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tdt4250.MyEcore.impl.OrdinaryProgramImpl#getSemsters <em>Semsters</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.ProgramWithNoSpecialicationImpl#getSemsters <em>Semsters</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram {
+public class ProgramWithNoSpecialicationImpl extends ProgramImpl implements ProgramWithNoSpecialication {
 	/**
 	 * The cached value of the '{@link #getSemsters() <em>Semsters</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OrdinaryProgramImpl() {
+	protected ProgramWithNoSpecialicationImpl() {
 		super();
 	}
 
@@ -54,7 +54,7 @@ public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MyEcorePackage.Literals.ORDINARY_PROGRAM;
+		return MyEcorePackage.Literals.PROGRAM_WITH_NO_SPECIALICATION;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram 
 		Semester oldSemsters = semsters;
 		semsters = newSemsters;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyEcorePackage.ORDINARY_PROGRAM__SEMSTERS, oldSemsters, newSemsters);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS, oldSemsters, newSemsters);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -90,14 +90,14 @@ public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram 
 		if (newSemsters != semsters) {
 			NotificationChain msgs = null;
 			if (semsters != null)
-				msgs = ((InternalEObject)semsters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.ORDINARY_PROGRAM__SEMSTERS, null, msgs);
+				msgs = ((InternalEObject)semsters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS, null, msgs);
 			if (newSemsters != null)
-				msgs = ((InternalEObject)newSemsters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.ORDINARY_PROGRAM__SEMSTERS, null, msgs);
+				msgs = ((InternalEObject)newSemsters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS, null, msgs);
 			msgs = basicSetSemsters(newSemsters, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.ORDINARY_PROGRAM__SEMSTERS, newSemsters, newSemsters));
+			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS, newSemsters, newSemsters));
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MyEcorePackage.ORDINARY_PROGRAM__SEMSTERS:
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
 				return basicSetSemsters(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -122,7 +122,7 @@ public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MyEcorePackage.ORDINARY_PROGRAM__SEMSTERS:
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
 				return getSemsters();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -136,7 +136,7 @@ public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MyEcorePackage.ORDINARY_PROGRAM__SEMSTERS:
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
 				setSemsters((Semester)newValue);
 				return;
 		}
@@ -151,7 +151,7 @@ public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.ORDINARY_PROGRAM__SEMSTERS:
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
 				setSemsters((Semester)null);
 				return;
 		}
@@ -166,10 +166,10 @@ public class OrdinaryProgramImpl extends ProgramImpl implements OrdinaryProgram 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.ORDINARY_PROGRAM__SEMSTERS:
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
 				return semsters != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //OrdinaryProgramImpl
+} //ProgramWithNoSpecialicationImpl

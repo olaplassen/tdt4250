@@ -49,13 +49,13 @@ public interface MyEcoreFactory extends EFactory {
 	Year createYear();
 
 	/**
-	 * Returns a new object of class '<em>Ordinary Program</em>'.
+	 * Returns a new object of class '<em>Program With No Specialication</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Ordinary Program</em>'.
+	 * @return a new object of class '<em>Program With No Specialication</em>'.
 	 * @generated
 	 */
-	OrdinaryProgram createOrdinaryProgram();
+	ProgramWithNoSpecialication createProgramWithNoSpecialication();
 
 	/**
 	 * Returns a new object of class '<em>Program With Specialisation</em>'.

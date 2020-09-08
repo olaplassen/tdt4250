@@ -2,6 +2,7 @@
  */
 package tdt4250.MyEcore;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,26 +25,16 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Semester extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Elective Courses</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Elective Courses</b></em>' containment reference list.
+	 * The list contents are of type {@link tdt4250.MyEcore.Course}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Elective Courses</em>' containment reference.
-	 * @see #setElectiveCourses(Course)
+	 * @return the value of the '<em>Elective Courses</em>' containment reference list.
 	 * @see tdt4250.MyEcore.MyEcorePackage#getSemester_ElectiveCourses()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Course getElectiveCourses();
-
-	/**
-	 * Sets the value of the '{@link tdt4250.MyEcore.Semester#getElectiveCourses <em>Elective Courses</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Elective Courses</em>' containment reference.
-	 * @see #getElectiveCourses()
-	 * @generated
-	 */
-	void setElectiveCourses(Course value);
+	EList<Course> getElectiveCourses();
 
 	/**
 	 * Returns the value of the '<em><b>Mandatory Courses</b></em>' containment reference.

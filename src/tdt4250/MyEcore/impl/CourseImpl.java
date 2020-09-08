@@ -20,7 +20,6 @@ import tdt4250.MyEcore.MyEcorePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tdt4250.MyEcore.impl.CourseImpl#getName <em>Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.CourseImpl#getCode <em>Code</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.CourseImpl#getCredit <em>Credit</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.CourseImpl#getLevel <em>Level</em>}</li>
@@ -29,26 +28,6 @@ import tdt4250.MyEcore.MyEcorePackage;
  * @generated
  */
 public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -133,27 +112,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.COURSE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getCode() {
 		return code;
 	}
@@ -220,8 +178,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MyEcorePackage.COURSE__NAME:
-				return getName();
 			case MyEcorePackage.COURSE__CODE:
 				return getCode();
 			case MyEcorePackage.COURSE__CREDIT:
@@ -240,9 +196,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MyEcorePackage.COURSE__NAME:
-				setName((String)newValue);
-				return;
 			case MyEcorePackage.COURSE__CODE:
 				setCode((String)newValue);
 				return;
@@ -264,9 +217,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.COURSE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case MyEcorePackage.COURSE__CODE:
 				setCode(CODE_EDEFAULT);
 				return;
@@ -288,8 +238,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.COURSE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MyEcorePackage.COURSE__CODE:
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 			case MyEcorePackage.COURSE__CREDIT:
@@ -310,9 +258,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", code: ");
+		result.append(" (code: ");
 		result.append(code);
 		result.append(", credit: ");
 		result.append(credit);

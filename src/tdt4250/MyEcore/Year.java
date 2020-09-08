@@ -28,12 +28,12 @@ public interface Year extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ordinary Programs</em>' containment reference.
-	 * @see #setOrdinaryPrograms(OrdinaryProgram)
+	 * @see #setOrdinaryPrograms(ProgramWithNoSpecialication)
 	 * @see tdt4250.MyEcore.MyEcorePackage#getYear_OrdinaryPrograms()
 	 * @model containment="true"
 	 * @generated
 	 */
-	OrdinaryProgram getOrdinaryPrograms();
+	ProgramWithNoSpecialication getOrdinaryPrograms();
 
 	/**
 	 * Sets the value of the '{@link tdt4250.MyEcore.Year#getOrdinaryPrograms <em>Ordinary Programs</em>}' containment reference.
@@ -43,7 +43,7 @@ public interface Year extends EObject {
 	 * @see #getOrdinaryPrograms()
 	 * @generated
 	 */
-	void setOrdinaryPrograms(OrdinaryProgram value);
+	void setOrdinaryPrograms(ProgramWithNoSpecialication value);
 
 	/**
 	 * Returns the value of the '<em><b>Programs With Specialisation</b></em>' containment reference.

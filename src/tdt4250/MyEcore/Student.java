@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link tdt4250.MyEcore.Student#getName <em>Name</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.Student#getFirstName <em>First Name</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.Student#getLastName <em>Last Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Student#getNumber <em>Number</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Student#getId <em>Id</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Student#getSchool <em>School</em>}</li>
@@ -21,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see tdt4250.MyEcore.MyEcorePackage#getStudent()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='nameCharacters'"
  * @generated
  */
 public interface Student extends EObject {
@@ -46,6 +48,28 @@ public interface Student extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>First Name</em>' attribute.
+	 * @see #setFirstName(String)
+	 * @see tdt4250.MyEcore.MyEcorePackage#getStudent_FirstName()
+	 * @model transient="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getFirstName();
+
+	/**
+	 * Sets the value of the '{@link tdt4250.MyEcore.Student#getFirstName <em>First Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>First Name</em>' attribute.
+	 * @see #getFirstName()
+	 * @generated
+	 */
+	void setFirstName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Number</b></em>' attribute.
@@ -136,5 +160,27 @@ public interface Student extends EObject {
 	 * @generated
 	 */
 	void setIndividualStudyPlan(IndividualStudyPlan value);
+
+	/**
+	 * Returns the value of the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Last Name</em>' attribute.
+	 * @see #setLastName(String)
+	 * @see tdt4250.MyEcore.MyEcorePackage#getStudent_LastName()
+	 * @model transient="true" volatile="true"
+	 * @generated
+	 */
+	String getLastName();
+
+	/**
+	 * Sets the value of the '{@link tdt4250.MyEcore.Student#getLastName <em>Last Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Last Name</em>' attribute.
+	 * @see #getLastName()
+	 * @generated
+	 */
+	void setLastName(String value);
 
 } // Student

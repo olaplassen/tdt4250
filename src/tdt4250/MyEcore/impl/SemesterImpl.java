@@ -2,15 +2,19 @@
  */
 package tdt4250.MyEcore.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import tdt4250.MyEcore.Course;
 import tdt4250.MyEcore.MyEcorePackage;
 import tdt4250.MyEcore.Semester;
@@ -32,14 +36,14 @@ import tdt4250.MyEcore.Semester;
  */
 public class SemesterImpl extends MinimalEObjectImpl.Container implements Semester {
 	/**
-	 * The cached value of the '{@link #getElectiveCourses() <em>Elective Courses</em>}' containment reference.
+	 * The cached value of the '{@link #getElectiveCourses() <em>Elective Courses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getElectiveCourses()
 	 * @generated
 	 * @ordered
 	 */
-	protected Course electiveCourses;
+	protected EList<Course> electiveCourses;
 
 	/**
 	 * The cached value of the '{@link #getMandatoryCourses() <em>Mandatory Courses</em>}' containment reference.
@@ -95,42 +99,11 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Course getElectiveCourses() {
+	public EList<Course> getElectiveCourses() {
+		if (electiveCourses == null) {
+			electiveCourses = new EObjectContainmentEList<Course>(Course.class, this, MyEcorePackage.SEMESTER__ELECTIVE_COURSES);
+		}
 		return electiveCourses;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetElectiveCourses(Course newElectiveCourses, NotificationChain msgs) {
-		Course oldElectiveCourses = electiveCourses;
-		electiveCourses = newElectiveCourses;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyEcorePackage.SEMESTER__ELECTIVE_COURSES, oldElectiveCourses, newElectiveCourses);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setElectiveCourses(Course newElectiveCourses) {
-		if (newElectiveCourses != electiveCourses) {
-			NotificationChain msgs = null;
-			if (electiveCourses != null)
-				msgs = ((InternalEObject)electiveCourses).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.SEMESTER__ELECTIVE_COURSES, null, msgs);
-			if (newElectiveCourses != null)
-				msgs = ((InternalEObject)newElectiveCourses).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.SEMESTER__ELECTIVE_COURSES, null, msgs);
-			msgs = basicSetElectiveCourses(newElectiveCourses, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.SEMESTER__ELECTIVE_COURSES, newElectiveCourses, newElectiveCourses));
 	}
 
 	/**
@@ -206,7 +179,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MyEcorePackage.SEMESTER__ELECTIVE_COURSES:
-				return basicSetElectiveCourses(null, msgs);
+				return ((InternalEList<?>)getElectiveCourses()).basicRemove(otherEnd, msgs);
 			case MyEcorePackage.SEMESTER__MANDATORY_COURSES:
 				return basicSetMandatoryCourses(null, msgs);
 		}
@@ -236,11 +209,13 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MyEcorePackage.SEMESTER__ELECTIVE_COURSES:
-				setElectiveCourses((Course)newValue);
+				getElectiveCourses().clear();
+				getElectiveCourses().addAll((Collection<? extends Course>)newValue);
 				return;
 			case MyEcorePackage.SEMESTER__MANDATORY_COURSES:
 				setMandatoryCourses((Course)newValue);
@@ -261,7 +236,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case MyEcorePackage.SEMESTER__ELECTIVE_COURSES:
-				setElectiveCourses((Course)null);
+				getElectiveCourses().clear();
 				return;
 			case MyEcorePackage.SEMESTER__MANDATORY_COURSES:
 				setMandatoryCourses((Course)null);
@@ -282,7 +257,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MyEcorePackage.SEMESTER__ELECTIVE_COURSES:
-				return electiveCourses != null;
+				return electiveCourses != null && !electiveCourses.isEmpty();
 			case MyEcorePackage.SEMESTER__MANDATORY_COURSES:
 				return mandatoryCourses != null;
 			case MyEcorePackage.SEMESTER__SEMESTER_CREDIT_REQUIREMENTS:

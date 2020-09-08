@@ -4,6 +4,7 @@ package tdt4250.MyEcore;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -222,14 +223,14 @@ public interface MyEcorePackage extends EPackage {
 	int YEAR_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tdt4250.MyEcore.impl.OrdinaryProgramImpl <em>Ordinary Program</em>}' class.
+	 * The meta object id for the '{@link tdt4250.MyEcore.impl.ProgramWithNoSpecialicationImpl <em>Program With No Specialication</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see tdt4250.MyEcore.impl.OrdinaryProgramImpl
-	 * @see tdt4250.MyEcore.impl.MyEcorePackageImpl#getOrdinaryProgram()
+	 * @see tdt4250.MyEcore.impl.ProgramWithNoSpecialicationImpl
+	 * @see tdt4250.MyEcore.impl.MyEcorePackageImpl#getProgramWithNoSpecialication()
 	 * @generated
 	 */
-	int ORDINARY_PROGRAM = 3;
+	int PROGRAM_WITH_NO_SPECIALICATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Program Name</b></em>' attribute.
@@ -238,7 +239,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDINARY_PROGRAM__PROGRAM_NAME = PROGRAM__PROGRAM_NAME;
+	int PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_NAME = PROGRAM__PROGRAM_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Program Credit Requirements</b></em>' attribute.
@@ -247,7 +248,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDINARY_PROGRAM__PROGRAM_CREDIT_REQUIREMENTS = PROGRAM__PROGRAM_CREDIT_REQUIREMENTS;
+	int PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_CREDIT_REQUIREMENTS = PROGRAM__PROGRAM_CREDIT_REQUIREMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Program Year</b></em>' containment reference.
@@ -256,7 +257,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDINARY_PROGRAM__PROGRAM_YEAR = PROGRAM__PROGRAM_YEAR;
+	int PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR = PROGRAM__PROGRAM_YEAR;
 
 	/**
 	 * The feature id for the '<em><b>Semsters</b></em>' containment reference.
@@ -265,25 +266,25 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDINARY_PROGRAM__SEMSTERS = PROGRAM_FEATURE_COUNT + 0;
+	int PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS = PROGRAM_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Ordinary Program</em>' class.
+	 * The number of structural features of the '<em>Program With No Specialication</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDINARY_PROGRAM_FEATURE_COUNT = PROGRAM_FEATURE_COUNT + 1;
+	int PROGRAM_WITH_NO_SPECIALICATION_FEATURE_COUNT = PROGRAM_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Ordinary Program</em>' class.
+	 * The number of operations of the '<em>Program With No Specialication</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDINARY_PROGRAM_OPERATION_COUNT = PROGRAM_OPERATION_COUNT + 0;
+	int PROGRAM_WITH_NO_SPECIALICATION_OPERATION_COUNT = PROGRAM_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tdt4250.MyEcore.impl.ProgramWithSpecialisationImpl <em>Program With Specialisation</em>}' class.
@@ -406,7 +407,7 @@ public interface MyEcorePackage extends EPackage {
 	int SEMESTER = 6;
 
 	/**
-	 * The feature id for the '<em><b>Elective Courses</b></em>' containment reference.
+	 * The feature id for the '<em><b>Elective Courses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -461,22 +462,13 @@ public interface MyEcorePackage extends EPackage {
 	int COURSE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE__NAME = 0;
-
-	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__CODE = 1;
+	int COURSE__CODE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Credit</b></em>' attribute.
@@ -485,7 +477,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__CREDIT = 2;
+	int COURSE__CREDIT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -494,7 +486,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__LEVEL = 3;
+	int COURSE__LEVEL = 2;
 
 	/**
 	 * The number of structural features of the '<em>Course</em>' class.
@@ -503,7 +495,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_FEATURE_COUNT = 4;
+	int COURSE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Course</em>' class.
@@ -534,13 +526,31 @@ public interface MyEcorePackage extends EPackage {
 	int STUDENT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__FIRST_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__LAST_NAME = 2;
+
+	/**
 	 * The feature id for the '<em><b>Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__NUMBER = 1;
+	int STUDENT__NUMBER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -549,7 +559,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__ID = 2;
+	int STUDENT__ID = 4;
 
 	/**
 	 * The feature id for the '<em><b>School</b></em>' container reference.
@@ -558,7 +568,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__SCHOOL = 3;
+	int STUDENT__SCHOOL = 5;
 
 	/**
 	 * The feature id for the '<em><b>Individual Study Plan</b></em>' containment reference.
@@ -567,7 +577,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__INDIVIDUAL_STUDY_PLAN = 4;
+	int STUDENT__INDIVIDUAL_STUDY_PLAN = 6;
 
 	/**
 	 * The number of structural features of the '<em>Student</em>' class.
@@ -576,7 +586,7 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT_FEATURE_COUNT = 5;
+	int STUDENT_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Student</em>' class.
@@ -598,7 +608,7 @@ public interface MyEcorePackage extends EPackage {
 	int INDIVIDUAL_STUDY_PLAN = 9;
 
 	/**
-	 * The feature id for the '<em><b>Selected Semesters</b></em>' reference.
+	 * The feature id for the '<em><b>Selected Semesters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -653,13 +663,22 @@ public interface MyEcorePackage extends EPackage {
 	int SELECTED_SEMESTER__SEMESTERS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Semester Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTED_SEMESTER__SEMESTER_NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Selected Semester</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTED_SEMESTER_FEATURE_COUNT = 1;
+	int SELECTED_SEMESTER_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Selected Semester</em>' class.
@@ -669,6 +688,17 @@ public interface MyEcorePackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECTED_SEMESTER_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '<em>Course Code</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see tdt4250.MyEcore.impl.MyEcorePackageImpl#getCourseCode()
+	 * @generated
+	 */
+	int COURSE_CODE = 11;
 
 
 	/**
@@ -801,25 +831,25 @@ public interface MyEcorePackage extends EPackage {
 	EAttribute getYear_Year();
 
 	/**
-	 * Returns the meta object for class '{@link tdt4250.MyEcore.OrdinaryProgram <em>Ordinary Program</em>}'.
+	 * Returns the meta object for class '{@link tdt4250.MyEcore.ProgramWithNoSpecialication <em>Program With No Specialication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ordinary Program</em>'.
-	 * @see tdt4250.MyEcore.OrdinaryProgram
+	 * @return the meta object for class '<em>Program With No Specialication</em>'.
+	 * @see tdt4250.MyEcore.ProgramWithNoSpecialication
 	 * @generated
 	 */
-	EClass getOrdinaryProgram();
+	EClass getProgramWithNoSpecialication();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link tdt4250.MyEcore.OrdinaryProgram#getSemsters <em>Semsters</em>}'.
+	 * Returns the meta object for the containment reference '{@link tdt4250.MyEcore.ProgramWithNoSpecialication#getSemsters <em>Semsters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Semsters</em>'.
-	 * @see tdt4250.MyEcore.OrdinaryProgram#getSemsters()
-	 * @see #getOrdinaryProgram()
+	 * @see tdt4250.MyEcore.ProgramWithNoSpecialication#getSemsters()
+	 * @see #getProgramWithNoSpecialication()
 	 * @generated
 	 */
-	EReference getOrdinaryProgram_Semsters();
+	EReference getProgramWithNoSpecialication_Semsters();
 
 	/**
 	 * Returns the meta object for class '{@link tdt4250.MyEcore.ProgramWithSpecialisation <em>Program With Specialisation</em>}'.
@@ -885,10 +915,10 @@ public interface MyEcorePackage extends EPackage {
 	EClass getSemester();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link tdt4250.MyEcore.Semester#getElectiveCourses <em>Elective Courses</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tdt4250.MyEcore.Semester#getElectiveCourses <em>Elective Courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Elective Courses</em>'.
+	 * @return the meta object for the containment reference list '<em>Elective Courses</em>'.
 	 * @see tdt4250.MyEcore.Semester#getElectiveCourses()
 	 * @see #getSemester()
 	 * @generated
@@ -926,17 +956,6 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCourse();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tdt4250.MyEcore.Course#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see tdt4250.MyEcore.Course#getName()
-	 * @see #getCourse()
-	 * @generated
-	 */
-	EAttribute getCourse_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link tdt4250.MyEcore.Course#getCode <em>Code</em>}'.
@@ -993,6 +1012,17 @@ public interface MyEcorePackage extends EPackage {
 	EAttribute getStudent_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tdt4250.MyEcore.Student#getFirstName <em>First Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>First Name</em>'.
+	 * @see tdt4250.MyEcore.Student#getFirstName()
+	 * @see #getStudent()
+	 * @generated
+	 */
+	EAttribute getStudent_FirstName();
+
+	/**
 	 * Returns the meta object for the attribute '{@link tdt4250.MyEcore.Student#getNumber <em>Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1037,6 +1067,17 @@ public interface MyEcorePackage extends EPackage {
 	EReference getStudent_IndividualStudyPlan();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tdt4250.MyEcore.Student#getLastName <em>Last Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Last Name</em>'.
+	 * @see tdt4250.MyEcore.Student#getLastName()
+	 * @see #getStudent()
+	 * @generated
+	 */
+	EAttribute getStudent_LastName();
+
+	/**
 	 * Returns the meta object for class '{@link tdt4250.MyEcore.IndividualStudyPlan <em>Individual Study Plan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1047,10 +1088,10 @@ public interface MyEcorePackage extends EPackage {
 	EClass getIndividualStudyPlan();
 
 	/**
-	 * Returns the meta object for the reference '{@link tdt4250.MyEcore.IndividualStudyPlan#getSelectedSemesters <em>Selected Semesters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tdt4250.MyEcore.IndividualStudyPlan#getSelectedSemesters <em>Selected Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Selected Semesters</em>'.
+	 * @return the meta object for the containment reference list '<em>Selected Semesters</em>'.
 	 * @see tdt4250.MyEcore.IndividualStudyPlan#getSelectedSemesters()
 	 * @see #getIndividualStudyPlan()
 	 * @generated
@@ -1088,6 +1129,28 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSelectedSemester_Semesters();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tdt4250.MyEcore.SelectedSemester#getSemesterName <em>Semester Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Semester Name</em>'.
+	 * @see tdt4250.MyEcore.SelectedSemester#getSemesterName()
+	 * @see #getSelectedSemester()
+	 * @generated
+	 */
+	EAttribute getSelectedSemester_SemesterName();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>Course Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Course Code</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 * @generated
+	 */
+	EDataType getCourseCode();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1215,14 +1278,14 @@ public interface MyEcorePackage extends EPackage {
 		EAttribute YEAR__YEAR = eINSTANCE.getYear_Year();
 
 		/**
-		 * The meta object literal for the '{@link tdt4250.MyEcore.impl.OrdinaryProgramImpl <em>Ordinary Program</em>}' class.
+		 * The meta object literal for the '{@link tdt4250.MyEcore.impl.ProgramWithNoSpecialicationImpl <em>Program With No Specialication</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tdt4250.MyEcore.impl.OrdinaryProgramImpl
-		 * @see tdt4250.MyEcore.impl.MyEcorePackageImpl#getOrdinaryProgram()
+		 * @see tdt4250.MyEcore.impl.ProgramWithNoSpecialicationImpl
+		 * @see tdt4250.MyEcore.impl.MyEcorePackageImpl#getProgramWithNoSpecialication()
 		 * @generated
 		 */
-		EClass ORDINARY_PROGRAM = eINSTANCE.getOrdinaryProgram();
+		EClass PROGRAM_WITH_NO_SPECIALICATION = eINSTANCE.getProgramWithNoSpecialication();
 
 		/**
 		 * The meta object literal for the '<em><b>Semsters</b></em>' containment reference feature.
@@ -1230,7 +1293,7 @@ public interface MyEcorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ORDINARY_PROGRAM__SEMSTERS = eINSTANCE.getOrdinaryProgram_Semsters();
+		EReference PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS = eINSTANCE.getProgramWithNoSpecialication_Semsters();
 
 		/**
 		 * The meta object literal for the '{@link tdt4250.MyEcore.impl.ProgramWithSpecialisationImpl <em>Program With Specialisation</em>}' class.
@@ -1287,7 +1350,7 @@ public interface MyEcorePackage extends EPackage {
 		EClass SEMESTER = eINSTANCE.getSemester();
 
 		/**
-		 * The meta object literal for the '<em><b>Elective Courses</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Elective Courses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1319,14 +1382,6 @@ public interface MyEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EClass COURSE = eINSTANCE.getCourse();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COURSE__NAME = eINSTANCE.getCourse_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
@@ -1371,6 +1426,14 @@ public interface MyEcorePackage extends EPackage {
 		EAttribute STUDENT__NAME = eINSTANCE.getStudent_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STUDENT__FIRST_NAME = eINSTANCE.getStudent_FirstName();
+
+		/**
 		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1403,6 +1466,14 @@ public interface MyEcorePackage extends EPackage {
 		EReference STUDENT__INDIVIDUAL_STUDY_PLAN = eINSTANCE.getStudent_IndividualStudyPlan();
 
 		/**
+		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STUDENT__LAST_NAME = eINSTANCE.getStudent_LastName();
+
+		/**
 		 * The meta object literal for the '{@link tdt4250.MyEcore.impl.IndividualStudyPlanImpl <em>Individual Study Plan</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1413,7 +1484,7 @@ public interface MyEcorePackage extends EPackage {
 		EClass INDIVIDUAL_STUDY_PLAN = eINSTANCE.getIndividualStudyPlan();
 
 		/**
-		 * The meta object literal for the '<em><b>Selected Semesters</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Selected Semesters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1445,6 +1516,24 @@ public interface MyEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SELECTED_SEMESTER__SEMESTERS = eINSTANCE.getSelectedSemester_Semesters();
+
+		/**
+		 * The meta object literal for the '<em><b>Semester Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SELECTED_SEMESTER__SEMESTER_NAME = eINSTANCE.getSelectedSemester_SemesterName();
+
+		/**
+		 * The meta object literal for the '<em>Course Code</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see tdt4250.MyEcore.impl.MyEcorePackageImpl#getCourseCode()
+		 * @generated
+		 */
+		EDataType COURSE_CODE = eINSTANCE.getCourseCode();
 
 	}
 
