@@ -14,8 +14,7 @@
           programName="Informatics Master">
         <specilisations
             name="Software">
-          <semesters
-              semesterCreditRequirements="30.0">
+          <semesters>
             <electiveCourses
                 code="TDT4136"
                 credit="7.5"/>
@@ -23,6 +22,8 @@
                 code="TDT4175"
                 credit="7.5"/>
           </semesters>
+          <semesters
+              SemesterKind="Fall"/>
         </specilisations>
       </programsWithSpecialisation>
     </programYear>
@@ -33,11 +34,19 @@
         year="2019">
       <ordinaryPrograms
           programName="DataScience Master">
-        <semsters
-            semesterCreditRequirements="30.0">
-          <electiveCourses/>
-          <electiveCourses/>
-          <mandatoryCourses/>
+        <semsters>
+          <electiveCourses
+              code="TDT4150"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT5242"
+              credit="10.0"/>
+          <electiveCourses
+              code="TDT5673"
+              credit="10.0"/>
+          <mandatoryCourses
+              code="TDT5262"
+              credit="7.5"/>
         </semsters>
       </ordinaryPrograms>
     </programYear>
@@ -45,11 +54,10 @@
   <programs
       programName="Informatics Bachelor"/>
   <students
-      firstName="Ola"
-      number="91324198"
-      id="2586"
-      lastName="Plassen">
-    <individualStudyPlan>
+      name="Ola Plassen"
+      id="2586">
+    <individualStudyPlan
+        selectedProgram="//@programs.0">
       <selectedSemesters
           semesterName="Spring 2021"/>
       <selectedSemesters
