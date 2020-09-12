@@ -184,7 +184,7 @@ public class MyEcoreValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(semester, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(semester, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(semester, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSemester_hasEnoughCredits(semester, diagnostics, context);
+//		if (result || diagnostics != null) result &= validateSemester_hasEnoughCredits(semester, diagnostics, context);
 		return result;
 	}
 
@@ -194,33 +194,33 @@ public class MyEcoreValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean validateSemester_hasEnoughCredits(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		
+//	public boolean validateSemester_hasEnoughCredits(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
+//		
 //		float creditSum = 0.0f;
 //		for (Course elective : semester.getElectiveCourses()) {
 //			
 //		}
-		
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "hasEnoughCredits", getObjectLabel(semester, context) },
-						 new Object[] { semester },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
+//		
+//	
+//		// -> specify the condition that violates the constraint
+//		// -> verify the diagnostic details, including severity, code, and message
+//		// Ensure that you remove @generated or mark it @generated NOT
+//		if (false) {
+//			if (diagnostics != null) {
+//				diagnostics.add
+//					(createDiagnostic
+//						(Diagnostic.ERROR,
+//						 DIAGNOSTIC_SOURCE,
+//						 0,
+//						 "_UI_GenericConstraint_diagnostic",
+//						 new Object[] { "hasEnoughCredits", getObjectLabel(semester, context) },
+//						 new Object[] { semester },
+//						 context));
+//			}
+//			return false;
+//		}
+//		return true;
+//	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,30 +251,31 @@ public class MyEcoreValidator extends EObjectValidator {
 		
 		float credit = course.getCredit();
 		float availableCredit[] = {5.0f,7.5f,10.0f,15.0f,20.0f,25.0f,30.0f};
+		boolean isCreditValid = false;
+		
 		
 		for (int i = 0; i < availableCredit.length; i++) {
-			if (credit != availableCredit[i]) {
-				
+			if (credit == availableCredit[i]) {
+				isCreditValid = true;
 			}
-			
 		}
+		if (isCreditValid) {		
+			return true;
+		}	
 		
-//????????
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "correctCredit", getObjectLabel(course, context) },
-						 new Object[] { course },
-						 context));
-			}
-			return false;
+		if (diagnostics != null) {
+			diagnostics.add
+				(createDiagnostic
+					(Diagnostic.ERROR,
+					 DIAGNOSTIC_SOURCE,
+					 0,
+					 "_UI_GenericConstraint_diagnostic",
+					 new Object[] { "correctCredit", getObjectLabel(course, context) },
+					 new Object[] { course },
+					 context));
 		}
-		return true;
+		return false;
+		
 	}
 
 	/**

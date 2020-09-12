@@ -14,16 +14,46 @@
           programName="Informatics Master">
         <specilisations
             name="Software">
-          <semesters>
+          <semesters
+              year="2020">
             <electiveCourses
-                code="TDT4136"
+                code="TDT4175 Information Systems"
                 credit="7.5"/>
+            <electiveCourses
+                code="TDT4250 Advanced Software Design"
+                credit="7.5"/>
+            <electiveCourses
+                code="TDT4259 Applied Data Science"
+                credit="7.5"/>
+            <electiveCourses
+                code="IT3402 User Interface Design"
+                credit="7.5"/>
+            <electiveCourses
+                code="TDT4165 Programming Languages"/>
             <mandatoryCourses
-                code="TDT4175"
+                code="TDT4117 Information Retrieval"
                 credit="7.5"/>
           </semesters>
           <semesters
-              SemesterKind="Fall"/>
+              year="2021"
+              SemesterKind="Fall">
+            <electiveCourses
+                code="TDT4237 Software Security and Data Privacy"
+                credit="7.5"
+                fallOrAutumnCourse="Fall"/>
+            <mandatoryCourses
+                code="IT3010 Empirical research methodologies in IT and digitalization"
+                credit="7.5"
+                fallOrAutumnCourse="Fall"/>
+            <mandatoryCourses
+                code="TDT4240 Software Architecture"
+                credit="7.5"
+                fallOrAutumnCourse="Fall"/>
+            <mandatoryCourses
+                code="TDT4257 Digital Service Innovation"
+                credit="7.5"
+                fallOrAutumnCourse="Fall"/>
+          </semesters>
         </specilisations>
       </programsWithSpecialisation>
     </programYear>
@@ -56,18 +86,10 @@
   <students
       name="Ola Plassen"
       id="2586">
-    <individualStudyPlan
-        selectedProgram="//@programs.0">
-      <selectedSemesters
-          semesterName="Spring 2021"/>
-      <selectedSemesters
-          semesterName="Fall 2020">
-        <semesters>
-          <electiveCourses/>
-          <electiveCourses/>
-          <mandatoryCourses/>
-        </semesters>
-      </selectedSemesters>
+    <individualStudyPlan>
+      <selectedSemesters/>
+      <selectedProgramWithNoSpecialication
+          programName="Informatics 2 year master"/>
     </individualStudyPlan>
   </students>
 </MyEcore:School>
