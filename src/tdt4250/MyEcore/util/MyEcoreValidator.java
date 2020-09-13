@@ -108,6 +108,10 @@ public class MyEcoreValidator extends EObjectValidator {
 				return validateIndividualStudyPlan((IndividualStudyPlan)value, diagnostics, context);
 			case MyEcorePackage.SELECTED_SEMESTER:
 				return validateSelectedSemester((SelectedSemester)value, diagnostics, context);
+			case MyEcorePackage.SEMESTER_KIND:
+				return validateSemesterKind((SemesterKind)value, diagnostics, context);
+			case MyEcorePackage.COURSE_LEVEL:
+				return validateCourseLevel((CourseLevel)value, diagnostics, context);
 			case MyEcorePackage.COURSE_CODE:
 				return validateCourseCode((String)value, diagnostics, context);
 			default:
@@ -184,8 +188,37 @@ public class MyEcoreValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(semester, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(semester, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(semester, diagnostics, context);
-//		if (result || diagnostics != null) result &= validateSemester_hasEnoughCredits(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSemester_semesterHasEnoughCredit(semester, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the semesterHasEnoughCredit constraint of '<em>Semester</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SEMESTER__SEMESTER_HAS_ENOUGH_CREDIT__EEXPRESSION = "((self.electiveCourses->collect(e | e.credit)->sum()) + (self.mandatoryCourses->collect(e | e.credit)->sum())) >=30.0";
+
+	/**
+	 * Validates the semesterHasEnoughCredit constraint of '<em>Semester</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemester_semesterHasEnoughCredit(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(MyEcorePackage.Literals.SEMESTER,
+				 semester,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "semesterHasEnoughCredit",
+				 SEMESTER__SEMESTER_HAS_ENOUGH_CREDIT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -348,6 +381,24 @@ public class MyEcoreValidator extends EObjectValidator {
 	 */
 	public boolean validateSelectedSemester(SelectedSemester selectedSemester, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(selectedSemester, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemesterKind(SemesterKind semesterKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseLevel(CourseLevel courseLevel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

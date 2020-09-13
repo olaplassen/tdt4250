@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tdt4250.MyEcore.Student#getName <em>Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Student#getFirstName <em>First Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Student#getLastName <em>Last Name</em>}</li>
- *   <li>{@link tdt4250.MyEcore.Student#getNumber <em>Number</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.Student#getEmail <em>Email</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Student#getId <em>Id</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Student#getSchool <em>School</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Student#getIndividualStudyPlan <em>Individual Study Plan</em>}</li>
@@ -70,28 +70,6 @@ public interface Student extends EObject {
 	 * @generated
 	 */
 	void setFirstName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Number</em>' attribute.
-	 * @see #setNumber(Integer)
-	 * @see tdt4250.MyEcore.MyEcorePackage#getStudent_Number()
-	 * @model
-	 * @generated
-	 */
-	Integer getNumber();
-
-	/**
-	 * Sets the value of the '{@link tdt4250.MyEcore.Student#getNumber <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Number</em>' attribute.
-	 * @see #getNumber()
-	 * @generated
-	 */
-	void setNumber(Integer value);
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
@@ -182,5 +160,27 @@ public interface Student extends EObject {
 	 * @generated
 	 */
 	void setLastName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Email</em>' attribute.
+	 * @see #setEmail(String)
+	 * @see tdt4250.MyEcore.MyEcorePackage#getStudent_Email()
+	 * @model
+	 * @generated
+	 */
+	String getEmail();
+
+	/**
+	 * Sets the value of the '{@link tdt4250.MyEcore.Student#getEmail <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Email</em>' attribute.
+	 * @see #getEmail()
+	 * @generated
+	 */
+	void setEmail(String value);
 
 } // Student

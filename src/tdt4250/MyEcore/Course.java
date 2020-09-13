@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tdt4250.MyEcore.Course#getCode <em>Code</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Course#getCredit <em>Credit</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Course#getLevel <em>Level</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.Course#getFallOrAutumnCourse <em>Fall Or Autumn Course</em>}</li>
  * </ul>
  *
  * @see tdt4250.MyEcore.MyEcorePackage#getCourse()
@@ -88,5 +89,30 @@ public interface Course extends EObject {
 	 * @generated
 	 */
 	void setLevel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Fall Or Autumn Course</b></em>' attribute.
+	 * The literals are from the enumeration {@link tdt4250.MyEcore.SemesterKind}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fall Or Autumn Course</em>' attribute.
+	 * @see tdt4250.MyEcore.SemesterKind
+	 * @see #setFallOrAutumnCourse(SemesterKind)
+	 * @see tdt4250.MyEcore.MyEcorePackage#getCourse_FallOrAutumnCourse()
+	 * @model
+	 * @generated
+	 */
+	SemesterKind getFallOrAutumnCourse();
+
+	/**
+	 * Sets the value of the '{@link tdt4250.MyEcore.Course#getFallOrAutumnCourse <em>Fall Or Autumn Course</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Fall Or Autumn Course</em>' attribute.
+	 * @see tdt4250.MyEcore.SemesterKind
+	 * @see #getFallOrAutumnCourse()
+	 * @generated
+	 */
+	void setFallOrAutumnCourse(SemesterKind value);
 
 } // Course

@@ -5,38 +5,40 @@
     <details key="validationDelegates" value="http://www.eclipse.org/acceleo/query/1.0"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="School">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programs" upperBound="-1"
-        eType="#//Program" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programsWithNoSpecialication"
+        upperBound="-1" eType="#//ProgramWithNoSpecialication" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="schoolName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="students" eType="#//Student"
-        containment="true" eOpposite="#//Student/school"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="students" upperBound="-1"
+        eType="#//Student" containment="true" eOpposite="#//Student/school"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programsWithSpecialications"
+        upperBound="-1" eType="#//ProgramWithSpecialisation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Program">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="programName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="programCreditRequirements"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programYear" eType="#//Year"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Year">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ordinaryPrograms" eType="#//ProgramWithNoSpecialication"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programsWithSpecialisation"
-        eType="#//ProgramWithSpecialisation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgramWithNoSpecialication" eSuperTypes="#//Program">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="semsters" upperBound="2"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specilisations" upperBound="-1"
+        eType="#//Specialisation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semsters" upperBound="-1"
         eType="#//Semester" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramWithNoSpecialication" eSuperTypes="#//Program">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programYear" upperBound="-1"
+        eType="#//Year" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProgramWithSpecialisation" eSuperTypes="#//Program">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specilisations" eType="#//Specialisation"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programSpecialicationYear"
+        upperBound="-1" eType="#//Year" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialisation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="2"
         eType="#//Semester" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newSpecialication" upperBound="-1"
+        eType="#//Specialisation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Semester">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -91,10 +93,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectedSemesters" upperBound="-1"
         eType="#//SelectedSemester" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="results" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selectedProgramWithNoSpecialication"
-        eType="#//ProgramWithNoSpecialication" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selectedProgramWithSpecialication"
-        eType="#//ProgramWithSpecialisation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectedSemester">
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" eType="#//Semester"

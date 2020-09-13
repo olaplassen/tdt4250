@@ -16,10 +16,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import tdt4250.MyEcore.MyEcorePackage;
-import tdt4250.MyEcore.Program;
+import tdt4250.MyEcore.ProgramWithNoSpecialication;
+import tdt4250.MyEcore.ProgramWithSpecialisation;
 import tdt4250.MyEcore.School;
 import tdt4250.MyEcore.Student;
 
@@ -31,23 +33,24 @@ import tdt4250.MyEcore.Student;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tdt4250.MyEcore.impl.SchoolImpl#getPrograms <em>Programs</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.SchoolImpl#getProgramsWithNoSpecialication <em>Programs With No Specialication</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.SchoolImpl#getSchoolName <em>School Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.SchoolImpl#getStudents <em>Students</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.SchoolImpl#getProgramsWithSpecialications <em>Programs With Specialications</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	/**
-	 * The cached value of the '{@link #getPrograms() <em>Programs</em>}' containment reference list.
+	 * The cached value of the '{@link #getProgramsWithNoSpecialication() <em>Programs With No Specialication</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrograms()
+	 * @see #getProgramsWithNoSpecialication()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Program> programs;
+	protected EList<ProgramWithNoSpecialication> programsWithNoSpecialication;
 
 	/**
 	 * The default value of the '{@link #getSchoolName() <em>School Name</em>}' attribute.
@@ -70,14 +73,24 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	protected String schoolName = SCHOOL_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getStudents() <em>Students</em>}' containment reference.
+	 * The cached value of the '{@link #getStudents() <em>Students</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStudents()
 	 * @generated
 	 * @ordered
 	 */
-	protected Student students;
+	protected EList<Student> students;
+
+	/**
+	 * The cached value of the '{@link #getProgramsWithSpecialications() <em>Programs With Specialications</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProgramsWithSpecialications()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ProgramWithSpecialisation> programsWithSpecialications;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,11 +116,11 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Program> getPrograms() {
-		if (programs == null) {
-			programs = new EObjectContainmentEList<Program>(Program.class, this, MyEcorePackage.SCHOOL__PROGRAMS);
+	public EList<ProgramWithNoSpecialication> getProgramsWithNoSpecialication() {
+		if (programsWithNoSpecialication == null) {
+			programsWithNoSpecialication = new EObjectContainmentEList<ProgramWithNoSpecialication>(ProgramWithNoSpecialication.class, this, MyEcorePackage.SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION);
 		}
-		return programs;
+		return programsWithNoSpecialication;
 	}
 
 	/**
@@ -136,7 +149,10 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Student getStudents() {
+	public EList<Student> getStudents() {
+		if (students == null) {
+			students = new EObjectContainmentWithInverseEList<Student>(Student.class, this, MyEcorePackage.SCHOOL__STUDENTS, MyEcorePackage.STUDENT__SCHOOL);
+		}
 		return students;
 	}
 
@@ -145,14 +161,11 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStudents(Student newStudents, NotificationChain msgs) {
-		Student oldStudents = students;
-		students = newStudents;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyEcorePackage.SCHOOL__STUDENTS, oldStudents, newStudents);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<ProgramWithSpecialisation> getProgramsWithSpecialications() {
+		if (programsWithSpecialications == null) {
+			programsWithSpecialications = new EObjectContainmentEList<ProgramWithSpecialisation>(ProgramWithSpecialisation.class, this, MyEcorePackage.SCHOOL__PROGRAMS_WITH_SPECIALICATIONS);
 		}
-		return msgs;
+		return programsWithSpecialications;
 	}
 
 	/**
@@ -160,32 +173,12 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStudents(Student newStudents) {
-		if (newStudents != students) {
-			NotificationChain msgs = null;
-			if (students != null)
-				msgs = ((InternalEObject)students).eInverseRemove(this, MyEcorePackage.STUDENT__SCHOOL, Student.class, msgs);
-			if (newStudents != null)
-				msgs = ((InternalEObject)newStudents).eInverseAdd(this, MyEcorePackage.STUDENT__SCHOOL, Student.class, msgs);
-			msgs = basicSetStudents(newStudents, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.SCHOOL__STUDENTS, newStudents, newStudents));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MyEcorePackage.SCHOOL__STUDENTS:
-				if (students != null)
-					msgs = ((InternalEObject)students).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.SCHOOL__STUDENTS, null, msgs);
-				return basicSetStudents((Student)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStudents()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -198,10 +191,12 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MyEcorePackage.SCHOOL__PROGRAMS:
-				return ((InternalEList<?>)getPrograms()).basicRemove(otherEnd, msgs);
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION:
+				return ((InternalEList<?>)getProgramsWithNoSpecialication()).basicRemove(otherEnd, msgs);
 			case MyEcorePackage.SCHOOL__STUDENTS:
-				return basicSetStudents(null, msgs);
+				return ((InternalEList<?>)getStudents()).basicRemove(otherEnd, msgs);
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_SPECIALICATIONS:
+				return ((InternalEList<?>)getProgramsWithSpecialications()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -214,12 +209,14 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MyEcorePackage.SCHOOL__PROGRAMS:
-				return getPrograms();
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION:
+				return getProgramsWithNoSpecialication();
 			case MyEcorePackage.SCHOOL__SCHOOL_NAME:
 				return getSchoolName();
 			case MyEcorePackage.SCHOOL__STUDENTS:
 				return getStudents();
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_SPECIALICATIONS:
+				return getProgramsWithSpecialications();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -233,15 +230,20 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MyEcorePackage.SCHOOL__PROGRAMS:
-				getPrograms().clear();
-				getPrograms().addAll((Collection<? extends Program>)newValue);
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION:
+				getProgramsWithNoSpecialication().clear();
+				getProgramsWithNoSpecialication().addAll((Collection<? extends ProgramWithNoSpecialication>)newValue);
 				return;
 			case MyEcorePackage.SCHOOL__SCHOOL_NAME:
 				setSchoolName((String)newValue);
 				return;
 			case MyEcorePackage.SCHOOL__STUDENTS:
-				setStudents((Student)newValue);
+				getStudents().clear();
+				getStudents().addAll((Collection<? extends Student>)newValue);
+				return;
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_SPECIALICATIONS:
+				getProgramsWithSpecialications().clear();
+				getProgramsWithSpecialications().addAll((Collection<? extends ProgramWithSpecialisation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -255,14 +257,17 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.SCHOOL__PROGRAMS:
-				getPrograms().clear();
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION:
+				getProgramsWithNoSpecialication().clear();
 				return;
 			case MyEcorePackage.SCHOOL__SCHOOL_NAME:
 				setSchoolName(SCHOOL_NAME_EDEFAULT);
 				return;
 			case MyEcorePackage.SCHOOL__STUDENTS:
-				setStudents((Student)null);
+				getStudents().clear();
+				return;
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_SPECIALICATIONS:
+				getProgramsWithSpecialications().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -276,12 +281,14 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.SCHOOL__PROGRAMS:
-				return programs != null && !programs.isEmpty();
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION:
+				return programsWithNoSpecialication != null && !programsWithNoSpecialication.isEmpty();
 			case MyEcorePackage.SCHOOL__SCHOOL_NAME:
 				return SCHOOL_NAME_EDEFAULT == null ? schoolName != null : !SCHOOL_NAME_EDEFAULT.equals(schoolName);
 			case MyEcorePackage.SCHOOL__STUDENTS:
-				return students != null;
+				return students != null && !students.isEmpty();
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_SPECIALICATIONS:
+				return programsWithSpecialications != null && !programsWithSpecialications.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

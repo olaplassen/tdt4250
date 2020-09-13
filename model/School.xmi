@@ -6,90 +6,445 @@
     xmlns:MyEcore="platform:/plugin/tdt4250/model/my.ecore"
     xsi:schemaLocation="platform:/plugin/tdt4250/model/my.ecore My.ecore"
     schoolName="NTNU">
-  <programs
-      programName="Informatics Master">
-    <programYear
-        year="2020">
-      <programsWithSpecialisation
-          programName="Informatics Master">
-        <specilisations
-            name="Software">
-          <semesters
-              year="2020">
-            <electiveCourses
-                code="TDT4175 Information Systems"
-                credit="7.5"/>
-            <electiveCourses
-                code="TDT4250 Advanced Software Design"
-                credit="7.5"/>
-            <electiveCourses
-                code="TDT4259 Applied Data Science"
-                credit="7.5"/>
-            <electiveCourses
-                code="IT3402 User Interface Design"
-                credit="7.5"/>
-            <electiveCourses
-                code="TDT4165 Programming Languages"/>
-            <mandatoryCourses
-                code="TDT4117 Information Retrieval"
-                credit="7.5"/>
-          </semesters>
-          <semesters
-              year="2021"
-              SemesterKind="Fall">
-            <electiveCourses
-                code="TDT4237 Software Security and Data Privacy"
-                credit="7.5"
-                fallOrAutumnCourse="Fall"/>
-            <mandatoryCourses
-                code="IT3010 Empirical research methodologies in IT and digitalization"
-                credit="7.5"
-                fallOrAutumnCourse="Fall"/>
-            <mandatoryCourses
-                code="TDT4240 Software Architecture"
-                credit="7.5"
-                fallOrAutumnCourse="Fall"/>
-            <mandatoryCourses
-                code="TDT4257 Digital Service Innovation"
-                credit="7.5"
-                fallOrAutumnCourse="Fall"/>
-          </semesters>
-        </specilisations>
-      </programsWithSpecialisation>
-    </programYear>
-  </programs>
-  <programs
-      programName="DataScience Master">
-    <programYear
-        year="2019">
-      <ordinaryPrograms
-          programName="DataScience Master">
-        <semsters>
-          <electiveCourses
-              code="TDT4150"
-              credit="7.5"/>
-          <electiveCourses
-              code="TDT5242"
-              credit="10.0"/>
-          <electiveCourses
-              code="TDT5673"
-              credit="10.0"/>
-          <mandatoryCourses
-              code="TDT5262"
-              credit="7.5"/>
-        </semsters>
-      </ordinaryPrograms>
-    </programYear>
-  </programs>
-  <programs
-      programName="Informatics Bachelor"/>
   <students
       name="Ola Plassen"
-      id="2586">
-    <individualStudyPlan>
-      <selectedSemesters/>
-      <selectedProgramWithNoSpecialication
-          programName="Informatics 2 year master"/>
-    </individualStudyPlan>
-  </students>
+      id="1"/>
+  <programsWithSpecialications
+      programName="Informatics Master">
+    <programSpecialicationYear
+        year="2019">
+      <specilisations
+          name="Software">
+        <semesters
+            year="2020">
+          <electiveCourses
+              code="TDT4259 Applied Data Science"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4250 Advanced Software Design"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4165 Programming Languages"
+              credit="7.5"/>
+          <electiveCourses
+              code="IT3402 User Interface Design"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4136 Introduction to Artificial Intellegence"
+              credit="7.5"/>
+          <mandatoryCourses
+              code="TDT4175 Informasjonssystemer"
+              credit="7.5"/>
+        </semesters>
+        <semesters
+            year="2021"
+            SemesterKind="Fall">
+          <electiveCourses
+              code="TDT4257 Digital Service Innovation"
+              credit="7.5"
+              fallOrAutumnCourse="Fall"/>
+          <electiveCourses
+              code="TDT4242 Advanced Software Engineering"
+              credit="7.5"
+              fallOrAutumnCourse="Fall"/>
+          <electiveCourses
+              code="TDT4237 Software Security and Data Privacy"
+              credit="7.5"
+              fallOrAutumnCourse="Fall"/>
+          <mandatoryCourses
+              code="IT3010 Empirical research methodologies in IT and digitalization"
+              credit="7.5"
+              fallOrAutumnCourse="Fall"/>
+          <mandatoryCourses
+              code="TDT4240 Software Architecture"
+              credit="7.5"
+              fallOrAutumnCourse="Fall"/>
+        </semesters>
+      </specilisations>
+      <specilisations
+          name="Artificial Intellegence">
+        <semesters
+            year="2020">
+          <electiveCourses
+              code="TDT4165 Programming Languages"/>
+          <electiveCourses
+              code="TDT4195 Visual Computing Fundamentals"/>
+          <electiveCourses
+              code="TDT4117 Information Retrieval"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4173 Machine Learning"
+              credit="7.5"/>
+          <mandatoryCourses
+              code="TDT4137 Cognitive Architectures"
+              credit="7.5"/>
+          <mandatoryCourses
+              code="TDT4136 Introduction to Artificial Intelligence"
+              credit="7.5"/>
+        </semesters>
+      </specilisations>
+    </programSpecialicationYear>
+    <programSpecialicationYear
+        year="2020">
+      <specilisations
+          name="Database and Search"/>
+    </programSpecialicationYear>
+  </programsWithSpecialications>
+  <programsWithSpecialications
+      programName="Datateknologi 5-årig master">
+    <programSpecialicationYear
+        year="2016">
+      <specilisations>
+        <semesters
+            year="2016">
+          <electiveCourses
+              code="TDT4165 Programming Languages"/>
+          <electiveCourses
+              code="TDT4195 Visual Computing Fundamentals"/>
+          <electiveCourses
+              code="TDT4117 Information Retrieval"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4173 Machine Learning"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4137 Cognitive Architectures"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4136 Introduction to Artificial Intelligence"
+              credit="7.5"/>
+        </semesters>
+        <semesters
+            year="2017"
+            SemesterKind="Fall">
+          <electiveCourses
+              code="TDT4165 Programming Languages"/>
+          <electiveCourses
+              code="TDT4195 Visual Computing Fundamentals"/>
+          <electiveCourses
+              code="TDT4117 Information Retrieval"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4173 Machine Learning"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4137 Cognitive Architectures"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4136 Introduction to Artificial Intelligence"
+              credit="7.5"/>
+        </semesters>
+        <semesters
+            year="2017">
+          <electiveCourses
+              code="TDT4165 Programming Languages"/>
+          <electiveCourses
+              code="TDT4195 Visual Computing Fundamentals"/>
+          <electiveCourses
+              code="TDT4117 Information Retrieval"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4173 Machine Learning"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4137 Cognitive Architectures"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4136 Introduction to Artificial Intelligence"
+              credit="7.5"/>
+        </semesters>
+        <semesters
+            year="2018">
+          <electiveCourses
+              code="TDT4165 Programming Languages"/>
+          <electiveCourses
+              code="TDT4195 Visual Computing Fundamentals"/>
+          <electiveCourses
+              code="TDT4117 Information Retrieval"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4173 Machine Learning"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4137 Cognitive Architectures"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4136 Introduction to Artificial Intelligence"
+              credit="7.5"/>
+        </semesters>
+        <semesters
+            year="2018"
+            SemesterKind="Fall">
+          <electiveCourses
+              code="TDT4165 Programming Languages"/>
+          <electiveCourses
+              code="TDT4195 Visual Computing Fundamentals"/>
+          <electiveCourses
+              code="TDT4117 Information Retrieval"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4173 Machine Learning"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4137 Cognitive Architectures"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4136 Introduction to Artificial Intelligence"
+              credit="7.5"/>
+        </semesters>
+        <newSpecialication
+            name="Algoritmer og datamaskiner">
+          <semesters>
+            <electiveCourses
+                code="TDT4165 Programming Languages"/>
+            <electiveCourses
+                code="TDT4195 Visual Computing Fundamentals"/>
+            <electiveCourses
+                code="TDT4117 Information Retrieval"
+                credit="7.5"/>
+            <electiveCourses
+                code="TDT4173 Machine Learning"
+                credit="7.5"/>
+            <electiveCourses
+                code="TDT4137 Cognitive Architectures"
+                credit="7.5"/>
+            <electiveCourses
+                code="TDT4136 Introduction to Artificial Intelligence"
+                credit="7.5"/>
+          </semesters>
+          <semesters>
+            <electiveCourses
+                code="TDT4165 Programming Languages"/>
+            <electiveCourses
+                code="TDT4195 Visual Computing Fundamentals"/>
+            <electiveCourses
+                code="TDT4117 Information Retrieval"
+                credit="7.5"/>
+            <electiveCourses
+                code="TDT4173 Machine Learning"
+                credit="7.5"/>
+            <electiveCourses
+                code="TDT4137 Cognitive Architectures"
+                credit="7.5"/>
+            <electiveCourses
+                code="TDT4136 Introduction to Artificial Intelligence"
+                credit="7.5"/>
+          </semesters>
+          <newSpecialication
+              name="Algortimer og HPC">
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+          </newSpecialication>
+          <newSpecialication
+              name="Datamaskiner og systemprogramvare">
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+          </newSpecialication>
+          <newSpecialication
+              name="Visuell databehandling">
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+            <semesters>
+              <electiveCourses
+                  code="TDT4165 Programming Languages"/>
+              <electiveCourses
+                  code="TDT4195 Visual Computing Fundamentals"/>
+              <electiveCourses
+                  code="TDT4117 Information Retrieval"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4173 Machine Learning"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4137 Cognitive Architectures"
+                  credit="7.5"/>
+              <electiveCourses
+                  code="TDT4136 Introduction to Artificial Intelligence"
+                  credit="7.5"/>
+            </semesters>
+          </newSpecialication>
+        </newSpecialication>
+        <newSpecialication
+            name="Databaser og søk"/>
+        <newSpecialication
+            name="Kunstig Intelligens"/>
+        <newSpecialication
+            name="Programvaresystemer"/>
+      </specilisations>
+    </programSpecialicationYear>
+  </programsWithSpecialications>
 </MyEcore:School>

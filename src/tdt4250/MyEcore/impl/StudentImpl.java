@@ -29,7 +29,7 @@ import tdt4250.MyEcore.Student;
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getName <em>Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getLastName <em>Last Name</em>}</li>
- *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getNumber <em>Number</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getId <em>Id</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getSchool <em>School</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.StudentImpl#getIndividualStudyPlan <em>Individual Study Plan</em>}</li>
@@ -79,24 +79,24 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 	protected static final String LAST_NAME_EDEFAULT = null;
 
 	/**
-	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getEmail()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer NUMBER_EDEFAULT = null;
+	protected static final String EMAIL_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getEmail()
 	 * @generated
 	 * @ordered
 	 */
-	protected Integer number = NUMBER_EDEFAULT;
+	protected String email = EMAIL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -230,8 +230,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer getNumber() {
-		return number;
+	public String getEmail() {
+		return email;
 	}
 
 	/**
@@ -239,11 +239,11 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNumber(Integer newNumber) {
-		Integer oldNumber = number;
-		number = newNumber;
+	public void setEmail(String newEmail) {
+		String oldEmail = email;
+		email = newEmail;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.STUDENT__NUMBER, oldNumber, number));
+			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.STUDENT__EMAIL, oldEmail, email));
 	}
 
 	/**
@@ -412,8 +412,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 				return getFirstName();
 			case MyEcorePackage.STUDENT__LAST_NAME:
 				return getLastName();
-			case MyEcorePackage.STUDENT__NUMBER:
-				return getNumber();
+			case MyEcorePackage.STUDENT__EMAIL:
+				return getEmail();
 			case MyEcorePackage.STUDENT__ID:
 				return getId();
 			case MyEcorePackage.STUDENT__SCHOOL:
@@ -441,8 +441,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 			case MyEcorePackage.STUDENT__LAST_NAME:
 				setLastName((String)newValue);
 				return;
-			case MyEcorePackage.STUDENT__NUMBER:
-				setNumber((Integer)newValue);
+			case MyEcorePackage.STUDENT__EMAIL:
+				setEmail((String)newValue);
 				return;
 			case MyEcorePackage.STUDENT__ID:
 				setId((Integer)newValue);
@@ -474,8 +474,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 			case MyEcorePackage.STUDENT__LAST_NAME:
 				setLastName(LAST_NAME_EDEFAULT);
 				return;
-			case MyEcorePackage.STUDENT__NUMBER:
-				setNumber(NUMBER_EDEFAULT);
+			case MyEcorePackage.STUDENT__EMAIL:
+				setEmail(EMAIL_EDEFAULT);
 				return;
 			case MyEcorePackage.STUDENT__ID:
 				setId(ID_EDEFAULT);
@@ -504,8 +504,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 				return FIRST_NAME_EDEFAULT == null ? getFirstName() != null : !FIRST_NAME_EDEFAULT.equals(getFirstName());
 			case MyEcorePackage.STUDENT__LAST_NAME:
 				return LAST_NAME_EDEFAULT == null ? getLastName() != null : !LAST_NAME_EDEFAULT.equals(getLastName());
-			case MyEcorePackage.STUDENT__NUMBER:
-				return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
+			case MyEcorePackage.STUDENT__EMAIL:
+				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 			case MyEcorePackage.STUDENT__ID:
 				return id != ID_EDEFAULT;
 			case MyEcorePackage.STUDENT__SCHOOL:
@@ -528,8 +528,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", number: ");
-		result.append(number);
+		result.append(", email: ");
+		result.append(email);
 		result.append(", id: ");
 		result.append(id);
 		result.append(')');

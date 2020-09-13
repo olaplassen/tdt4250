@@ -81,6 +81,10 @@ public class MyEcoreFactoryImpl extends EFactoryImpl implements MyEcoreFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case MyEcorePackage.SEMESTER_KIND:
+				return createSemesterKindFromString(eDataType, initialValue);
+			case MyEcorePackage.COURSE_LEVEL:
+				return createCourseLevelFromString(eDataType, initialValue);
 			case MyEcorePackage.COURSE_CODE:
 				return createCourseCodeFromString(eDataType, initialValue);
 			default:
@@ -96,6 +100,10 @@ public class MyEcoreFactoryImpl extends EFactoryImpl implements MyEcoreFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case MyEcorePackage.SEMESTER_KIND:
+				return convertSemesterKindToString(eDataType, instanceValue);
+			case MyEcorePackage.COURSE_LEVEL:
+				return convertCourseLevelToString(eDataType, instanceValue);
 			case MyEcorePackage.COURSE_CODE:
 				return convertCourseCodeToString(eDataType, instanceValue);
 			default:
@@ -211,6 +219,46 @@ public class MyEcoreFactoryImpl extends EFactoryImpl implements MyEcoreFactory {
 	public SelectedSemester createSelectedSemester() {
 		SelectedSemesterImpl selectedSemester = new SelectedSemesterImpl();
 		return selectedSemester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SemesterKind createSemesterKindFromString(EDataType eDataType, String initialValue) {
+		SemesterKind result = SemesterKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSemesterKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CourseLevel createCourseLevelFromString(EDataType eDataType, String initialValue) {
+		CourseLevel result = CourseLevel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCourseLevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

@@ -2,15 +2,19 @@
  */
 package tdt4250.MyEcore.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import tdt4250.MyEcore.MyEcorePackage;
 import tdt4250.MyEcore.Semester;
 import tdt4250.MyEcore.Specialisation;
@@ -25,20 +29,21 @@ import tdt4250.MyEcore.Specialisation;
  * <ul>
  *   <li>{@link tdt4250.MyEcore.impl.SpecialisationImpl#getSemesters <em>Semesters</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.SpecialisationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.SpecialisationImpl#getNewSpecialication <em>New Specialication</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SpecialisationImpl extends MinimalEObjectImpl.Container implements Specialisation {
 	/**
-	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' containment reference.
+	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSemesters()
 	 * @generated
 	 * @ordered
 	 */
-	protected Semester semesters;
+	protected EList<Semester> semesters;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -59,6 +64,16 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getNewSpecialication() <em>New Specialication</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNewSpecialication()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Specialisation> newSpecialication;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,42 +99,11 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Semester getSemesters() {
+	public EList<Semester> getSemesters() {
+		if (semesters == null) {
+			semesters = new EObjectContainmentEList<Semester>(Semester.class, this, MyEcorePackage.SPECIALISATION__SEMESTERS);
+		}
 		return semesters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSemesters(Semester newSemesters, NotificationChain msgs) {
-		Semester oldSemesters = semesters;
-		semesters = newSemesters;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyEcorePackage.SPECIALISATION__SEMESTERS, oldSemesters, newSemesters);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSemesters(Semester newSemesters) {
-		if (newSemesters != semesters) {
-			NotificationChain msgs = null;
-			if (semesters != null)
-				msgs = ((InternalEObject)semesters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.SPECIALISATION__SEMESTERS, null, msgs);
-			if (newSemesters != null)
-				msgs = ((InternalEObject)newSemesters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.SPECIALISATION__SEMESTERS, null, msgs);
-			msgs = basicSetSemesters(newSemesters, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.SPECIALISATION__SEMESTERS, newSemesters, newSemesters));
 	}
 
 	/**
@@ -148,11 +132,25 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Specialisation> getNewSpecialication() {
+		if (newSpecialication == null) {
+			newSpecialication = new EObjectContainmentEList<Specialisation>(Specialisation.class, this, MyEcorePackage.SPECIALISATION__NEW_SPECIALICATION);
+		}
+		return newSpecialication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MyEcorePackage.SPECIALISATION__SEMESTERS:
-				return basicSetSemesters(null, msgs);
+				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
+			case MyEcorePackage.SPECIALISATION__NEW_SPECIALICATION:
+				return ((InternalEList<?>)getNewSpecialication()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -169,6 +167,8 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 				return getSemesters();
 			case MyEcorePackage.SPECIALISATION__NAME:
 				return getName();
+			case MyEcorePackage.SPECIALISATION__NEW_SPECIALICATION:
+				return getNewSpecialication();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -178,14 +178,20 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MyEcorePackage.SPECIALISATION__SEMESTERS:
-				setSemesters((Semester)newValue);
+				getSemesters().clear();
+				getSemesters().addAll((Collection<? extends Semester>)newValue);
 				return;
 			case MyEcorePackage.SPECIALISATION__NAME:
 				setName((String)newValue);
+				return;
+			case MyEcorePackage.SPECIALISATION__NEW_SPECIALICATION:
+				getNewSpecialication().clear();
+				getNewSpecialication().addAll((Collection<? extends Specialisation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -200,10 +206,13 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case MyEcorePackage.SPECIALISATION__SEMESTERS:
-				setSemesters((Semester)null);
+				getSemesters().clear();
 				return;
 			case MyEcorePackage.SPECIALISATION__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case MyEcorePackage.SPECIALISATION__NEW_SPECIALICATION:
+				getNewSpecialication().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -218,9 +227,11 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MyEcorePackage.SPECIALISATION__SEMESTERS:
-				return semesters != null;
+				return semesters != null && !semesters.isEmpty();
 			case MyEcorePackage.SPECIALISATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case MyEcorePackage.SPECIALISATION__NEW_SPECIALICATION:
+				return newSpecialication != null && !newSpecialication.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -3,17 +3,12 @@
 package tdt4250.MyEcore.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tdt4250.MyEcore.MyEcorePackage;
 import tdt4250.MyEcore.Program;
-import tdt4250.MyEcore.Year;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +20,6 @@ import tdt4250.MyEcore.Year;
  * <ul>
  *   <li>{@link tdt4250.MyEcore.impl.ProgramImpl#getProgramName <em>Program Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.ProgramImpl#getProgramCreditRequirements <em>Program Credit Requirements</em>}</li>
- *   <li>{@link tdt4250.MyEcore.impl.ProgramImpl#getProgramYear <em>Program Year</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,7 +53,7 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float PROGRAM_CREDIT_REQUIREMENTS_EDEFAULT = 0.0F;
+	protected static final int PROGRAM_CREDIT_REQUIREMENTS_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getProgramCreditRequirements() <em>Program Credit Requirements</em>}' attribute.
@@ -69,17 +63,7 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 	 * @generated
 	 * @ordered
 	 */
-	protected float programCreditRequirements = PROGRAM_CREDIT_REQUIREMENTS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProgramYear() <em>Program Year</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProgramYear()
-	 * @generated
-	 * @ordered
-	 */
-	protected Year programYear;
+	protected int programCreditRequirements = PROGRAM_CREDIT_REQUIREMENTS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,7 +110,7 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getProgramCreditRequirements() {
+	public int getProgramCreditRequirements() {
 		return programCreditRequirements;
 	}
 
@@ -135,68 +119,11 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProgramCreditRequirements(float newProgramCreditRequirements) {
-		float oldProgramCreditRequirements = programCreditRequirements;
+	public void setProgramCreditRequirements(int newProgramCreditRequirements) {
+		int oldProgramCreditRequirements = programCreditRequirements;
 		programCreditRequirements = newProgramCreditRequirements;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.PROGRAM__PROGRAM_CREDIT_REQUIREMENTS, oldProgramCreditRequirements, programCreditRequirements));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Year getProgramYear() {
-		return programYear;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetProgramYear(Year newProgramYear, NotificationChain msgs) {
-		Year oldProgramYear = programYear;
-		programYear = newProgramYear;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyEcorePackage.PROGRAM__PROGRAM_YEAR, oldProgramYear, newProgramYear);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setProgramYear(Year newProgramYear) {
-		if (newProgramYear != programYear) {
-			NotificationChain msgs = null;
-			if (programYear != null)
-				msgs = ((InternalEObject)programYear).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.PROGRAM__PROGRAM_YEAR, null, msgs);
-			if (newProgramYear != null)
-				msgs = ((InternalEObject)newProgramYear).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.PROGRAM__PROGRAM_YEAR, null, msgs);
-			msgs = basicSetProgramYear(newProgramYear, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.PROGRAM__PROGRAM_YEAR, newProgramYear, newProgramYear));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case MyEcorePackage.PROGRAM__PROGRAM_YEAR:
-				return basicSetProgramYear(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -211,8 +138,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 				return getProgramName();
 			case MyEcorePackage.PROGRAM__PROGRAM_CREDIT_REQUIREMENTS:
 				return getProgramCreditRequirements();
-			case MyEcorePackage.PROGRAM__PROGRAM_YEAR:
-				return getProgramYear();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,10 +154,7 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 				setProgramName((String)newValue);
 				return;
 			case MyEcorePackage.PROGRAM__PROGRAM_CREDIT_REQUIREMENTS:
-				setProgramCreditRequirements((Float)newValue);
-				return;
-			case MyEcorePackage.PROGRAM__PROGRAM_YEAR:
-				setProgramYear((Year)newValue);
+				setProgramCreditRequirements((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -252,9 +174,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 			case MyEcorePackage.PROGRAM__PROGRAM_CREDIT_REQUIREMENTS:
 				setProgramCreditRequirements(PROGRAM_CREDIT_REQUIREMENTS_EDEFAULT);
 				return;
-			case MyEcorePackage.PROGRAM__PROGRAM_YEAR:
-				setProgramYear((Year)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -271,8 +190,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 				return PROGRAM_NAME_EDEFAULT == null ? programName != null : !PROGRAM_NAME_EDEFAULT.equals(programName);
 			case MyEcorePackage.PROGRAM__PROGRAM_CREDIT_REQUIREMENTS:
 				return programCreditRequirements != PROGRAM_CREDIT_REQUIREMENTS_EDEFAULT;
-			case MyEcorePackage.PROGRAM__PROGRAM_YEAR:
-				return programYear != null;
 		}
 		return super.eIsSet(featureID);
 	}

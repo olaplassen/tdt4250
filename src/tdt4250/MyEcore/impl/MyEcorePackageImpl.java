@@ -5,6 +5,7 @@ package tdt4250.MyEcore.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -12,6 +13,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import tdt4250.MyEcore.Course;
+import tdt4250.MyEcore.CourseLevel;
 import tdt4250.MyEcore.IndividualStudyPlan;
 import tdt4250.MyEcore.MyEcoreFactory;
 import tdt4250.MyEcore.MyEcorePackage;
@@ -21,6 +23,7 @@ import tdt4250.MyEcore.ProgramWithSpecialisation;
 import tdt4250.MyEcore.School;
 import tdt4250.MyEcore.SelectedSemester;
 import tdt4250.MyEcore.Semester;
+import tdt4250.MyEcore.SemesterKind;
 import tdt4250.MyEcore.Specialisation;
 import tdt4250.MyEcore.Student;
 import tdt4250.MyEcore.Year;
@@ -115,6 +118,20 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum semesterKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum courseLevelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType courseCodeEDataType = null;
 
 	/**
@@ -201,7 +218,7 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSchool_Programs() {
+	public EReference getSchool_ProgramsWithNoSpecialication() {
 		return (EReference)schoolEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -221,6 +238,15 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 */
 	public EReference getSchool_Students() {
 		return (EReference)schoolEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSchool_ProgramsWithSpecialications() {
+		return (EReference)schoolEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -255,15 +281,6 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProgram_ProgramYear() {
-		return (EReference)programEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getYear() {
 		return yearEClass;
 	}
@@ -273,8 +290,8 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getYear_OrdinaryPrograms() {
-		return (EReference)yearEClass.getEStructuralFeatures().get(0);
+	public EAttribute getYear_Year() {
+		return (EAttribute)yearEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -282,7 +299,7 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getYear_ProgramsWithSpecialisation() {
+	public EReference getYear_Specilisations() {
 		return (EReference)yearEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -291,8 +308,8 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getYear_Year() {
-		return (EAttribute)yearEClass.getEStructuralFeatures().get(2);
+	public EReference getYear_Semsters() {
+		return (EReference)yearEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -309,7 +326,7 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProgramWithNoSpecialication_Semsters() {
+	public EReference getProgramWithNoSpecialication_ProgramYear() {
 		return (EReference)programWithNoSpecialicationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -327,7 +344,7 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProgramWithSpecialisation_Specilisations() {
+	public EReference getProgramWithSpecialisation_ProgramSpecialicationYear() {
 		return (EReference)programWithSpecialisationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -363,6 +380,15 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSpecialisation_NewSpecialication() {
+		return (EReference)specialisationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSemester() {
 		return semesterEClass;
 	}
@@ -372,8 +398,8 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSemester_ElectiveCourses() {
-		return (EReference)semesterEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSemester_Year() {
+		return (EAttribute)semesterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -381,7 +407,7 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSemester_MandatoryCourses() {
+	public EReference getSemester_ElectiveCourses() {
 		return (EReference)semesterEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -390,8 +416,17 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSemester_SemesterCreditRequirements() {
-		return (EAttribute)semesterEClass.getEStructuralFeatures().get(2);
+	public EReference getSemester_MandatoryCourses() {
+		return (EReference)semesterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSemester_SemesterKind() {
+		return (EAttribute)semesterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -435,6 +470,15 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCourse_FallOrAutumnCourse() {
+		return (EAttribute)courseEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStudent() {
 		return studentEClass;
 	}
@@ -455,15 +499,6 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 */
 	public EAttribute getStudent_FirstName() {
 		return (EAttribute)studentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStudent_Number() {
-		return (EAttribute)studentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -500,6 +535,15 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 */
 	public EAttribute getStudent_LastName() {
 		return (EAttribute)studentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStudent_Email() {
+		return (EAttribute)studentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -561,6 +605,24 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getSemesterKind() {
+		return semesterKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getCourseLevel() {
+		return courseLevelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getCourseCode() {
 		return courseCodeEDataType;
 	}
@@ -594,45 +656,48 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 
 		// Create classes and their features
 		schoolEClass = createEClass(SCHOOL);
-		createEReference(schoolEClass, SCHOOL__PROGRAMS);
+		createEReference(schoolEClass, SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION);
 		createEAttribute(schoolEClass, SCHOOL__SCHOOL_NAME);
 		createEReference(schoolEClass, SCHOOL__STUDENTS);
+		createEReference(schoolEClass, SCHOOL__PROGRAMS_WITH_SPECIALICATIONS);
 
 		programEClass = createEClass(PROGRAM);
 		createEAttribute(programEClass, PROGRAM__PROGRAM_NAME);
 		createEAttribute(programEClass, PROGRAM__PROGRAM_CREDIT_REQUIREMENTS);
-		createEReference(programEClass, PROGRAM__PROGRAM_YEAR);
 
 		yearEClass = createEClass(YEAR);
-		createEReference(yearEClass, YEAR__ORDINARY_PROGRAMS);
-		createEReference(yearEClass, YEAR__PROGRAMS_WITH_SPECIALISATION);
 		createEAttribute(yearEClass, YEAR__YEAR);
+		createEReference(yearEClass, YEAR__SPECILISATIONS);
+		createEReference(yearEClass, YEAR__SEMSTERS);
 
 		programWithNoSpecialicationEClass = createEClass(PROGRAM_WITH_NO_SPECIALICATION);
-		createEReference(programWithNoSpecialicationEClass, PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS);
+		createEReference(programWithNoSpecialicationEClass, PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR);
 
 		programWithSpecialisationEClass = createEClass(PROGRAM_WITH_SPECIALISATION);
-		createEReference(programWithSpecialisationEClass, PROGRAM_WITH_SPECIALISATION__SPECILISATIONS);
+		createEReference(programWithSpecialisationEClass, PROGRAM_WITH_SPECIALISATION__PROGRAM_SPECIALICATION_YEAR);
 
 		specialisationEClass = createEClass(SPECIALISATION);
 		createEReference(specialisationEClass, SPECIALISATION__SEMESTERS);
 		createEAttribute(specialisationEClass, SPECIALISATION__NAME);
+		createEReference(specialisationEClass, SPECIALISATION__NEW_SPECIALICATION);
 
 		semesterEClass = createEClass(SEMESTER);
+		createEAttribute(semesterEClass, SEMESTER__YEAR);
 		createEReference(semesterEClass, SEMESTER__ELECTIVE_COURSES);
 		createEReference(semesterEClass, SEMESTER__MANDATORY_COURSES);
-		createEAttribute(semesterEClass, SEMESTER__SEMESTER_CREDIT_REQUIREMENTS);
+		createEAttribute(semesterEClass, SEMESTER__SEMESTER_KIND);
 
 		courseEClass = createEClass(COURSE);
 		createEAttribute(courseEClass, COURSE__CODE);
 		createEAttribute(courseEClass, COURSE__CREDIT);
 		createEAttribute(courseEClass, COURSE__LEVEL);
+		createEAttribute(courseEClass, COURSE__FALL_OR_AUTUMN_COURSE);
 
 		studentEClass = createEClass(STUDENT);
 		createEAttribute(studentEClass, STUDENT__NAME);
 		createEAttribute(studentEClass, STUDENT__FIRST_NAME);
 		createEAttribute(studentEClass, STUDENT__LAST_NAME);
-		createEAttribute(studentEClass, STUDENT__NUMBER);
+		createEAttribute(studentEClass, STUDENT__EMAIL);
 		createEAttribute(studentEClass, STUDENT__ID);
 		createEReference(studentEClass, STUDENT__SCHOOL);
 		createEReference(studentEClass, STUDENT__INDIVIDUAL_STUDY_PLAN);
@@ -644,6 +709,10 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 		selectedSemesterEClass = createEClass(SELECTED_SEMESTER);
 		createEReference(selectedSemesterEClass, SELECTED_SEMESTER__SEMESTERS);
 		createEAttribute(selectedSemesterEClass, SELECTED_SEMESTER__SEMESTER_NAME);
+
+		// Create enums
+		semesterKindEEnum = createEEnum(SEMESTER_KIND);
+		courseLevelEEnum = createEEnum(COURSE_LEVEL);
 
 		// Create data types
 		courseCodeEDataType = createEDataType(COURSE_CODE);
@@ -682,45 +751,48 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(schoolEClass, School.class, "School", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSchool_Programs(), this.getProgram(), null, "programs", null, 0, -1, School.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchool_ProgramsWithNoSpecialication(), this.getProgramWithNoSpecialication(), null, "programsWithNoSpecialication", null, 0, -1, School.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchool_SchoolName(), ecorePackage.getEString(), "schoolName", null, 0, 1, School.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSchool_Students(), this.getStudent(), this.getStudent_School(), "students", null, 0, 1, School.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchool_Students(), this.getStudent(), this.getStudent_School(), "students", null, 0, -1, School.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchool_ProgramsWithSpecialications(), this.getProgramWithSpecialisation(), null, "programsWithSpecialications", null, 0, -1, School.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProgram_ProgramName(), ecorePackage.getEString(), "programName", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProgram_ProgramCreditRequirements(), ecorePackage.getEFloat(), "programCreditRequirements", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProgram_ProgramYear(), this.getYear(), null, "programYear", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProgram_ProgramCreditRequirements(), ecorePackage.getEInt(), "programCreditRequirements", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(yearEClass, Year.class, "Year", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getYear_OrdinaryPrograms(), this.getProgramWithNoSpecialication(), null, "ordinaryPrograms", null, 0, 1, Year.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYear_ProgramsWithSpecialisation(), this.getProgramWithSpecialisation(), null, "programsWithSpecialisation", null, 0, 1, Year.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getYear_Year(), ecorePackage.getEInt(), "year", null, 0, 1, Year.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getYear_Specilisations(), this.getSpecialisation(), null, "specilisations", null, 0, -1, Year.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getYear_Semsters(), this.getSemester(), null, "semsters", null, 0, -1, Year.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(programWithNoSpecialicationEClass, ProgramWithNoSpecialication.class, "ProgramWithNoSpecialication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProgramWithNoSpecialication_Semsters(), this.getSemester(), null, "semsters", null, 0, 1, ProgramWithNoSpecialication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProgramWithNoSpecialication_ProgramYear(), this.getYear(), null, "programYear", null, 0, -1, ProgramWithNoSpecialication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(programWithSpecialisationEClass, ProgramWithSpecialisation.class, "ProgramWithSpecialisation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProgramWithSpecialisation_Specilisations(), this.getSpecialisation(), null, "specilisations", null, 0, 1, ProgramWithSpecialisation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProgramWithSpecialisation_ProgramSpecialicationYear(), this.getYear(), null, "programSpecialicationYear", null, 0, -1, ProgramWithSpecialisation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specialisationEClass, Specialisation.class, "Specialisation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSpecialisation_Semesters(), this.getSemester(), null, "semesters", null, 0, 1, Specialisation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecialisation_Semesters(), this.getSemester(), null, "semesters", null, 0, 2, Specialisation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecialisation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specialisation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecialisation_NewSpecialication(), this.getSpecialisation(), null, "newSpecialication", null, 0, -1, Specialisation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSemester_Year(), ecorePackage.getEInt(), "year", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSemester_ElectiveCourses(), this.getCourse(), null, "electiveCourses", null, 0, -1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSemester_MandatoryCourses(), this.getCourse(), null, "mandatoryCourses", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSemester_SemesterCreditRequirements(), ecorePackage.getEFloat(), "semesterCreditRequirements", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSemester_MandatoryCourses(), this.getCourse(), null, "mandatoryCourses", null, 0, -1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemester_SemesterKind(), this.getSemesterKind(), "SemesterKind", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCourse_Code(), this.getCourseCode(), "code", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Credit(), ecorePackage.getEFloat(), "credit", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Level(), ecorePackage.getEString(), "level", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourse_FallOrAutumnCourse(), this.getSemesterKind(), "fallOrAutumnCourse", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStudent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStudent_FirstName(), ecorePackage.getEString(), "firstName", null, 0, 1, Student.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStudent_LastName(), ecorePackage.getEString(), "lastName", null, 0, 1, Student.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStudent_Number(), ecorePackage.getEIntegerObject(), "number", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStudent_Email(), ecorePackage.getEString(), "email", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStudent_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudent_School(), this.getSchool(), this.getSchool_Students(), "school", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudent_IndividualStudyPlan(), this.getIndividualStudyPlan(), null, "individualStudyPlan", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -733,6 +805,15 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 		initEReference(getSelectedSemester_Semesters(), this.getSemester(), null, "semesters", null, 0, 1, SelectedSemester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelectedSemester_SemesterName(), ecorePackage.getEString(), "semesterName", null, 0, 1, SelectedSemester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		// Initialize enums and add enum literals
+		initEEnum(semesterKindEEnum, SemesterKind.class, "SemesterKind");
+		addEEnumLiteral(semesterKindEEnum, SemesterKind.AUTUMN);
+		addEEnumLiteral(semesterKindEEnum, SemesterKind.FALL);
+
+		initEEnum(courseLevelEEnum, CourseLevel.class, "CourseLevel");
+		addEEnumLiteral(courseLevelEEnum, CourseLevel.HIGHER_GRADE_LEVEL);
+		addEEnumLiteral(courseLevelEEnum, CourseLevel.THIRD_YEAR_LEVEL);
+
 		// Initialize data types
 		initEDataType(courseCodeEDataType, String.class, "CourseCode", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
@@ -742,6 +823,8 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/acceleo/query/1.0
+		create_1Annotations();
 	}
 
 	/**
@@ -753,10 +836,16 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "validationDelegates", "http://www.eclipse.org/acceleo/query/1.0"
+		   });
+		addAnnotation
 		  (semesterEClass,
 		   source,
 		   new String[] {
-			   "constraints", "hasEnoughCredits"
+			   "constraints", "semesterHasEnoughCredit"
 		   });
 		addAnnotation
 		  (courseEClass,
@@ -769,6 +858,22 @@ public class MyEcorePackageImpl extends EPackageImpl implements MyEcorePackage {
 		   source,
 		   new String[] {
 			   "constraints", "nameCharacters"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/acceleo/query/1.0</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void create_1Annotations() {
+		String source = "http://www.eclipse.org/acceleo/query/1.0";
+		addAnnotation
+		  (semesterEClass,
+		   source,
+		   new String[] {
+			   "semesterHasEnoughCredit", "((self.electiveCourses->collect(e | e.credit)->sum()) + (self.mandatoryCourses->collect(e | e.credit)->sum())) >=30.0"
 		   });
 	}
 

@@ -2,6 +2,8 @@
  */
 package tdt4250.MyEcore;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +14,7 @@ package tdt4250.MyEcore;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tdt4250.MyEcore.ProgramWithNoSpecialication#getSemsters <em>Semsters</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.ProgramWithNoSpecialication#getProgramYear <em>Program Year</em>}</li>
  * </ul>
  *
  * @see tdt4250.MyEcore.MyEcorePackage#getProgramWithNoSpecialication()
@@ -21,25 +23,15 @@ package tdt4250.MyEcore;
  */
 public interface ProgramWithNoSpecialication extends Program {
 	/**
-	 * Returns the value of the '<em><b>Semsters</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Program Year</b></em>' containment reference list.
+	 * The list contents are of type {@link tdt4250.MyEcore.Year}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Semsters</em>' containment reference.
-	 * @see #setSemsters(Semester)
-	 * @see tdt4250.MyEcore.MyEcorePackage#getProgramWithNoSpecialication_Semsters()
+	 * @return the value of the '<em>Program Year</em>' containment reference list.
+	 * @see tdt4250.MyEcore.MyEcorePackage#getProgramWithNoSpecialication_ProgramYear()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Semester getSemsters();
-
-	/**
-	 * Sets the value of the '{@link tdt4250.MyEcore.ProgramWithNoSpecialication#getSemsters <em>Semsters</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Semsters</em>' containment reference.
-	 * @see #getSemsters()
-	 * @generated
-	 */
-	void setSemsters(Semester value);
+	EList<Year> getProgramYear();
 
 } // ProgramWithNoSpecialication

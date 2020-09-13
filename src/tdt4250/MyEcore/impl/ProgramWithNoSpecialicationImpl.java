@@ -2,17 +2,17 @@
  */
 package tdt4250.MyEcore.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import tdt4250.MyEcore.MyEcorePackage;
 import tdt4250.MyEcore.ProgramWithNoSpecialication;
-import tdt4250.MyEcore.Semester;
+import tdt4250.MyEcore.Year;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,22 +22,21 @@ import tdt4250.MyEcore.Semester;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tdt4250.MyEcore.impl.ProgramWithNoSpecialicationImpl#getSemsters <em>Semsters</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.ProgramWithNoSpecialicationImpl#getProgramYear <em>Program Year</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ProgramWithNoSpecialicationImpl extends ProgramImpl implements ProgramWithNoSpecialication {
 	/**
-	 * The cached value of the '{@link #getSemsters() <em>Semsters</em>}' containment reference.
+	 * The cached value of the '{@link #getProgramYear() <em>Program Year</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSemsters()
+	 * @see #getProgramYear()
 	 * @generated
 	 * @ordered
 	 */
-	protected Semester semsters;
-
+	protected EList<Year> programYear;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,42 +61,11 @@ public class ProgramWithNoSpecialicationImpl extends ProgramImpl implements Prog
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Semester getSemsters() {
-		return semsters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSemsters(Semester newSemsters, NotificationChain msgs) {
-		Semester oldSemsters = semsters;
-		semsters = newSemsters;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS, oldSemsters, newSemsters);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Year> getProgramYear() {
+		if (programYear == null) {
+			programYear = new EObjectContainmentEList<Year>(Year.class, this, MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSemsters(Semester newSemsters) {
-		if (newSemsters != semsters) {
-			NotificationChain msgs = null;
-			if (semsters != null)
-				msgs = ((InternalEObject)semsters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS, null, msgs);
-			if (newSemsters != null)
-				msgs = ((InternalEObject)newSemsters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS, null, msgs);
-			msgs = basicSetSemsters(newSemsters, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS, newSemsters, newSemsters));
+		return programYear;
 	}
 
 	/**
@@ -108,8 +76,8 @@ public class ProgramWithNoSpecialicationImpl extends ProgramImpl implements Prog
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
-				return basicSetSemsters(null, msgs);
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR:
+				return ((InternalEList<?>)getProgramYear()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -122,8 +90,8 @@ public class ProgramWithNoSpecialicationImpl extends ProgramImpl implements Prog
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
-				return getSemsters();
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR:
+				return getProgramYear();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -133,11 +101,13 @@ public class ProgramWithNoSpecialicationImpl extends ProgramImpl implements Prog
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
-				setSemsters((Semester)newValue);
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR:
+				getProgramYear().clear();
+				getProgramYear().addAll((Collection<? extends Year>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,8 +121,8 @@ public class ProgramWithNoSpecialicationImpl extends ProgramImpl implements Prog
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
-				setSemsters((Semester)null);
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR:
+				getProgramYear().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -166,8 +136,8 @@ public class ProgramWithNoSpecialicationImpl extends ProgramImpl implements Prog
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SEMSTERS:
-				return semsters != null;
+			case MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR:
+				return programYear != null && !programYear.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

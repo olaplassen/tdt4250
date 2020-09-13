@@ -16,29 +16,30 @@
     </genEnums>
     <genDataTypes ecoreDataType="My.ecore#//CourseCode"/>
     <genClasses ecoreClass="My.ecore#//School">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//School/programs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//School/programsWithNoSpecialication"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//School/schoolName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//School/students"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//School/programsWithSpecialications"/>
     </genClasses>
     <genClasses ecoreClass="My.ecore#//Program">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Program/programName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Program/programCreditRequirements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Program/programYear"/>
     </genClasses>
     <genClasses ecoreClass="My.ecore#//Year">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Year/ordinaryPrograms"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Year/programsWithSpecialisation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Year/year"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Year/specilisations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Year/semsters"/>
     </genClasses>
     <genClasses ecoreClass="My.ecore#//ProgramWithNoSpecialication">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//ProgramWithNoSpecialication/semsters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//ProgramWithNoSpecialication/programYear"/>
     </genClasses>
     <genClasses ecoreClass="My.ecore#//ProgramWithSpecialisation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//ProgramWithSpecialisation/specilisations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//ProgramWithSpecialisation/programSpecialicationYear"/>
     </genClasses>
     <genClasses ecoreClass="My.ecore#//Specialisation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Specialisation/semesters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Specialisation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Specialisation/newSpecialication"/>
     </genClasses>
     <genClasses ecoreClass="My.ecore#//Semester">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Semester/year"/>
@@ -50,6 +51,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Course/code"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Course/credit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Course/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Course/fallOrAutumnCourse"/>
     </genClasses>
     <genClasses ecoreClass="My.ecore#//Student">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Student/name"/>
@@ -63,8 +65,6 @@
     <genClasses ecoreClass="My.ecore#//IndividualStudyPlan">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference My.ecore#//IndividualStudyPlan/selectedSemesters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//IndividualStudyPlan/results"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//IndividualStudyPlan/selectedProgramWithNoSpecialication"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//IndividualStudyPlan/selectedProgramWithSpecialication"/>
     </genClasses>
     <genClasses ecoreClass="My.ecore#//SelectedSemester">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//SelectedSemester/semesters"/>

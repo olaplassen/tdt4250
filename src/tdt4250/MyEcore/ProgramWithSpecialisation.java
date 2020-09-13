@@ -2,6 +2,8 @@
  */
 package tdt4250.MyEcore;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +14,7 @@ package tdt4250.MyEcore;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tdt4250.MyEcore.ProgramWithSpecialisation#getSpecilisations <em>Specilisations</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.ProgramWithSpecialisation#getProgramSpecialicationYear <em>Program Specialication Year</em>}</li>
  * </ul>
  *
  * @see tdt4250.MyEcore.MyEcorePackage#getProgramWithSpecialisation()
@@ -21,25 +23,15 @@ package tdt4250.MyEcore;
  */
 public interface ProgramWithSpecialisation extends Program {
 	/**
-	 * Returns the value of the '<em><b>Specilisations</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Program Specialication Year</b></em>' containment reference list.
+	 * The list contents are of type {@link tdt4250.MyEcore.Year}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specilisations</em>' containment reference.
-	 * @see #setSpecilisations(Specialisation)
-	 * @see tdt4250.MyEcore.MyEcorePackage#getProgramWithSpecialisation_Specilisations()
+	 * @return the value of the '<em>Program Specialication Year</em>' containment reference list.
+	 * @see tdt4250.MyEcore.MyEcorePackage#getProgramWithSpecialisation_ProgramSpecialicationYear()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Specialisation getSpecilisations();
-
-	/**
-	 * Sets the value of the '{@link tdt4250.MyEcore.ProgramWithSpecialisation#getSpecilisations <em>Specilisations</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Specilisations</em>' containment reference.
-	 * @see #getSpecilisations()
-	 * @generated
-	 */
-	void setSpecilisations(Specialisation value);
+	EList<Year> getProgramSpecialicationYear();
 
 } // ProgramWithSpecialisation

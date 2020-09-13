@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tdt4250.MyEcore.Program#getProgramName <em>Program Name</em>}</li>
  *   <li>{@link tdt4250.MyEcore.Program#getProgramCreditRequirements <em>Program Credit Requirements</em>}</li>
- *   <li>{@link tdt4250.MyEcore.Program#getProgramYear <em>Program Year</em>}</li>
  * </ul>
  *
  * @see tdt4250.MyEcore.MyEcorePackage#getProgram()
@@ -50,12 +49,12 @@ public interface Program extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Program Credit Requirements</em>' attribute.
-	 * @see #setProgramCreditRequirements(float)
+	 * @see #setProgramCreditRequirements(int)
 	 * @see tdt4250.MyEcore.MyEcorePackage#getProgram_ProgramCreditRequirements()
 	 * @model
 	 * @generated
 	 */
-	float getProgramCreditRequirements();
+	int getProgramCreditRequirements();
 
 	/**
 	 * Sets the value of the '{@link tdt4250.MyEcore.Program#getProgramCreditRequirements <em>Program Credit Requirements</em>}' attribute.
@@ -65,28 +64,6 @@ public interface Program extends EObject {
 	 * @see #getProgramCreditRequirements()
 	 * @generated
 	 */
-	void setProgramCreditRequirements(float value);
-
-	/**
-	 * Returns the value of the '<em><b>Program Year</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Program Year</em>' containment reference.
-	 * @see #setProgramYear(Year)
-	 * @see tdt4250.MyEcore.MyEcorePackage#getProgram_ProgramYear()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Year getProgramYear();
-
-	/**
-	 * Sets the value of the '{@link tdt4250.MyEcore.Program#getProgramYear <em>Program Year</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Program Year</em>' containment reference.
-	 * @see #getProgramYear()
-	 * @generated
-	 */
-	void setProgramYear(Year value);
+	void setProgramCreditRequirements(int value);
 
 } // Program

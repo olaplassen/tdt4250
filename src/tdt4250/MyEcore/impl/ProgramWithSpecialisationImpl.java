@@ -2,17 +2,17 @@
  */
 package tdt4250.MyEcore.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import tdt4250.MyEcore.MyEcorePackage;
 import tdt4250.MyEcore.ProgramWithSpecialisation;
-import tdt4250.MyEcore.Specialisation;
+import tdt4250.MyEcore.Year;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,22 +22,21 @@ import tdt4250.MyEcore.Specialisation;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tdt4250.MyEcore.impl.ProgramWithSpecialisationImpl#getSpecilisations <em>Specilisations</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.ProgramWithSpecialisationImpl#getProgramSpecialicationYear <em>Program Specialication Year</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ProgramWithSpecialisationImpl extends ProgramImpl implements ProgramWithSpecialisation {
 	/**
-	 * The cached value of the '{@link #getSpecilisations() <em>Specilisations</em>}' containment reference.
+	 * The cached value of the '{@link #getProgramSpecialicationYear() <em>Program Specialication Year</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecilisations()
+	 * @see #getProgramSpecialicationYear()
 	 * @generated
 	 * @ordered
 	 */
-	protected Specialisation specilisations;
-
+	protected EList<Year> programSpecialicationYear;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,42 +61,11 @@ public class ProgramWithSpecialisationImpl extends ProgramImpl implements Progra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Specialisation getSpecilisations() {
-		return specilisations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSpecilisations(Specialisation newSpecilisations, NotificationChain msgs) {
-		Specialisation oldSpecilisations = specilisations;
-		specilisations = newSpecilisations;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SPECILISATIONS, oldSpecilisations, newSpecilisations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Year> getProgramSpecialicationYear() {
+		if (programSpecialicationYear == null) {
+			programSpecialicationYear = new EObjectContainmentEList<Year>(Year.class, this, MyEcorePackage.PROGRAM_WITH_SPECIALISATION__PROGRAM_SPECIALICATION_YEAR);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSpecilisations(Specialisation newSpecilisations) {
-		if (newSpecilisations != specilisations) {
-			NotificationChain msgs = null;
-			if (specilisations != null)
-				msgs = ((InternalEObject)specilisations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SPECILISATIONS, null, msgs);
-			if (newSpecilisations != null)
-				msgs = ((InternalEObject)newSpecilisations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SPECILISATIONS, null, msgs);
-			msgs = basicSetSpecilisations(newSpecilisations, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SPECILISATIONS, newSpecilisations, newSpecilisations));
+		return programSpecialicationYear;
 	}
 
 	/**
@@ -108,8 +76,8 @@ public class ProgramWithSpecialisationImpl extends ProgramImpl implements Progra
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SPECILISATIONS:
-				return basicSetSpecilisations(null, msgs);
+			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__PROGRAM_SPECIALICATION_YEAR:
+				return ((InternalEList<?>)getProgramSpecialicationYear()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -122,8 +90,8 @@ public class ProgramWithSpecialisationImpl extends ProgramImpl implements Progra
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SPECILISATIONS:
-				return getSpecilisations();
+			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__PROGRAM_SPECIALICATION_YEAR:
+				return getProgramSpecialicationYear();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -133,11 +101,13 @@ public class ProgramWithSpecialisationImpl extends ProgramImpl implements Progra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SPECILISATIONS:
-				setSpecilisations((Specialisation)newValue);
+			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__PROGRAM_SPECIALICATION_YEAR:
+				getProgramSpecialicationYear().clear();
+				getProgramSpecialicationYear().addAll((Collection<? extends Year>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,8 +121,8 @@ public class ProgramWithSpecialisationImpl extends ProgramImpl implements Progra
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SPECILISATIONS:
-				setSpecilisations((Specialisation)null);
+			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__PROGRAM_SPECIALICATION_YEAR:
+				getProgramSpecialicationYear().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -166,8 +136,8 @@ public class ProgramWithSpecialisationImpl extends ProgramImpl implements Progra
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SPECILISATIONS:
-				return specilisations != null;
+			case MyEcorePackage.PROGRAM_WITH_SPECIALISATION__PROGRAM_SPECIALICATION_YEAR:
+				return programSpecialicationYear != null && !programSpecialicationYear.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tdt4250.MyEcore.Course;
 import tdt4250.MyEcore.MyEcorePackage;
+import tdt4250.MyEcore.SemesterKind;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +24,7 @@ import tdt4250.MyEcore.MyEcorePackage;
  *   <li>{@link tdt4250.MyEcore.impl.CourseImpl#getCode <em>Code</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.CourseImpl#getCredit <em>Credit</em>}</li>
  *   <li>{@link tdt4250.MyEcore.impl.CourseImpl#getLevel <em>Level</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.impl.CourseImpl#getFallOrAutumnCourse <em>Fall Or Autumn Course</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +89,26 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @ordered
 	 */
 	protected String level = LEVEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFallOrAutumnCourse() <em>Fall Or Autumn Course</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFallOrAutumnCourse()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final SemesterKind FALL_OR_AUTUMN_COURSE_EDEFAULT = SemesterKind.AUTUMN;
+
+	/**
+	 * The cached value of the '{@link #getFallOrAutumnCourse() <em>Fall Or Autumn Course</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFallOrAutumnCourse()
+	 * @generated
+	 * @ordered
+	 */
+	protected SemesterKind fallOrAutumnCourse = FALL_OR_AUTUMN_COURSE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,6 +197,27 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SemesterKind getFallOrAutumnCourse() {
+		return fallOrAutumnCourse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFallOrAutumnCourse(SemesterKind newFallOrAutumnCourse) {
+		SemesterKind oldFallOrAutumnCourse = fallOrAutumnCourse;
+		fallOrAutumnCourse = newFallOrAutumnCourse == null ? FALL_OR_AUTUMN_COURSE_EDEFAULT : newFallOrAutumnCourse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.COURSE__FALL_OR_AUTUMN_COURSE, oldFallOrAutumnCourse, fallOrAutumnCourse));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -184,6 +227,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return getCredit();
 			case MyEcorePackage.COURSE__LEVEL:
 				return getLevel();
+			case MyEcorePackage.COURSE__FALL_OR_AUTUMN_COURSE:
+				return getFallOrAutumnCourse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,6 +249,9 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return;
 			case MyEcorePackage.COURSE__LEVEL:
 				setLevel((String)newValue);
+				return;
+			case MyEcorePackage.COURSE__FALL_OR_AUTUMN_COURSE:
+				setFallOrAutumnCourse((SemesterKind)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,6 +274,9 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case MyEcorePackage.COURSE__LEVEL:
 				setLevel(LEVEL_EDEFAULT);
 				return;
+			case MyEcorePackage.COURSE__FALL_OR_AUTUMN_COURSE:
+				setFallOrAutumnCourse(FALL_OR_AUTUMN_COURSE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,6 +295,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return credit != CREDIT_EDEFAULT;
 			case MyEcorePackage.COURSE__LEVEL:
 				return LEVEL_EDEFAULT == null ? level != null : !LEVEL_EDEFAULT.equals(level);
+			case MyEcorePackage.COURSE__FALL_OR_AUTUMN_COURSE:
+				return fallOrAutumnCourse != FALL_OR_AUTUMN_COURSE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -264,6 +317,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		result.append(credit);
 		result.append(", level: ");
 		result.append(level);
+		result.append(", fallOrAutumnCourse: ");
+		result.append(fallOrAutumnCourse);
 		result.append(')');
 		return result.toString();
 	}
