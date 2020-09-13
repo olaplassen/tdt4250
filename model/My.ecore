@@ -34,7 +34,7 @@
         upperBound="-1" eType="#//Year" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialisation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="2"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="-1"
         eType="#//Semester" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="newSpecialication" upperBound="-1"

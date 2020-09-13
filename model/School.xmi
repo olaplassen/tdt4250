@@ -194,7 +194,8 @@
         </semesters>
         <newSpecialication
             name="Algoritmer og datamaskiner">
-          <semesters>
+          <semesters
+              year="2018">
             <electiveCourses
                 code="TDT4165 Programming Languages"/>
             <electiveCourses
@@ -212,7 +213,9 @@
                 code="TDT4136 Introduction to Artificial Intelligence"
                 credit="7.5"/>
           </semesters>
-          <semesters>
+          <semesters
+              year="2019"
+              SemesterKind="Fall">
             <electiveCourses
                 code="TDT4165 Programming Languages"/>
             <electiveCourses
