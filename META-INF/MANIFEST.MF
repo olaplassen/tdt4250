@@ -12,5 +12,6 @@ Export-Package: tdt4250.MyEcore,
  tdt4250.MyEcore.impl,
  tdt4250.MyEcore.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport
 Bundle-ActivationPolicy: lazy

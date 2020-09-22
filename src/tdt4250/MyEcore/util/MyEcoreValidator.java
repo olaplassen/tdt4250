@@ -418,6 +418,7 @@ public class MyEcoreValidator extends EObjectValidator {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
+		// TODO
 		// Specialize this to return a resource locator for messages specific to this validator.
 		// Ensure that you remove @generated or mark it @generated NOT
 		return super.getResourceLocator();

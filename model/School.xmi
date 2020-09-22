@@ -98,8 +98,6 @@
         <semesters
             year="2016">
           <electiveCourses
-              code="TDT4165 Programming Languages"/>
-          <electiveCourses
               code="TDT4195 Visual Computing Fundamentals"/>
           <electiveCourses
               code="TDT4117 Information Retrieval"
@@ -113,12 +111,13 @@
           <electiveCourses
               code="TDT4136 Introduction to Artificial Intelligence"
               credit="7.5"/>
+          <mandatoryCourses
+              code="TDT4165 Programming Languages"
+              credit="7.5"/>
         </semesters>
         <semesters
             year="2017"
             SemesterKind="Fall">
-          <electiveCourses
-              code="TDT4165 Programming Languages"/>
           <electiveCourses
               code="TDT4195 Visual Computing Fundamentals"/>
           <electiveCourses
@@ -131,6 +130,9 @@
               code="TDT4137 Cognitive Architectures"
               credit="7.5"/>
           <electiveCourses
+              code="TDT4165 Programming Languages"
+              credit="7.5"/>
+          <mandatoryCourses
               code="TDT4136 Introduction to Artificial Intelligence"
               credit="7.5"/>
         </semesters>
@@ -139,8 +141,6 @@
           <electiveCourses
               code="TDT4165 Programming Languages"/>
           <electiveCourses
-              code="TDT4195 Visual Computing Fundamentals"/>
-          <electiveCourses
               code="TDT4117 Information Retrieval"
               credit="7.5"/>
           <electiveCourses
@@ -151,6 +151,9 @@
               credit="7.5"/>
           <electiveCourses
               code="TDT4136 Introduction to Artificial Intelligence"
+              credit="7.5"/>
+          <mandatoryCourses
+              code="TDT4195 Visual Computing Fundamentals"
               credit="7.5"/>
         </semesters>
         <semesters
@@ -163,13 +166,13 @@
               code="TDT4117 Information Retrieval"
               credit="7.5"/>
           <electiveCourses
-              code="TDT4173 Machine Learning"
-              credit="7.5"/>
-          <electiveCourses
               code="TDT4137 Cognitive Architectures"
               credit="7.5"/>
           <electiveCourses
               code="TDT4136 Introduction to Artificial Intelligence"
+              credit="7.5"/>
+          <mandatoryCourses
+              code="TDT4173 Machine Learning"
               credit="7.5"/>
         </semesters>
         <semesters
@@ -180,9 +183,6 @@
           <electiveCourses
               code="TDT4195 Visual Computing Fundamentals"/>
           <electiveCourses
-              code="TDT4117 Information Retrieval"
-              credit="7.5"/>
-          <electiveCourses
               code="TDT4173 Machine Learning"
               credit="7.5"/>
           <electiveCourses
@@ -190,6 +190,9 @@
               credit="7.5"/>
           <electiveCourses
               code="TDT4136 Introduction to Artificial Intelligence"
+              credit="7.5"/>
+          <mandatoryCourses
+              code="TDT4117 Information Retrieval"
               credit="7.5"/>
         </semesters>
         <newSpecialication

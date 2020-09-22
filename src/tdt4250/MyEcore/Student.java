@@ -146,7 +146,7 @@ public interface Student extends EObject {
 	 * @return the value of the '<em>Last Name</em>' attribute.
 	 * @see #setLastName(String)
 	 * @see tdt4250.MyEcore.MyEcorePackage#getStudent_LastName()
-	 * @model transient="true" volatile="true"
+	 * @model transient="true" volatile="true" derived="true"
 	 * @generated
 	 */
 	String getLastName();
