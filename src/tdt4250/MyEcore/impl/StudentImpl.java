@@ -175,11 +175,11 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 	 */
 	public String getFirstName() {
 		if (this.name == null) {
-			return null;
+			return "?";
 		}
 		int pos = name.lastIndexOf(' ');
 		if (pos < 0) {
-			return null;
+			return "?";
 		}
 		return name.substring(0, pos).trim();
 	}
@@ -206,7 +206,7 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 		if (this.name == null) {
 			return "?";
 		}
-		int pos = name.lastIndexOf(' ');
+		int pos = name.lastIndexOf(" ");
 		if (pos < 0) {
 			return name;
 		}

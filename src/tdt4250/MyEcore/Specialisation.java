@@ -31,7 +31,7 @@ public interface Specialisation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Semesters</em>' containment reference list.
 	 * @see tdt4250.MyEcore.MyEcorePackage#getSpecialisation_Semesters()
-	 * @model containment="true" upper="2"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Semester> getSemesters();
