@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -118,7 +116,7 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	 */
 	public EList<ProgramWithNoSpecialication> getProgramsWithNoSpecialication() {
 		if (programsWithNoSpecialication == null) {
-			programsWithNoSpecialication = new EObjectContainmentEList<ProgramWithNoSpecialication>(ProgramWithNoSpecialication.class, this, MyEcorePackage.SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION);
+			programsWithNoSpecialication = new EObjectContainmentWithInverseEList<ProgramWithNoSpecialication>(ProgramWithNoSpecialication.class, this, MyEcorePackage.SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION, MyEcorePackage.PROGRAM_WITH_NO_SPECIALICATION__SCHOOL);
 		}
 		return programsWithNoSpecialication;
 	}
@@ -163,7 +161,7 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	 */
 	public EList<ProgramWithSpecialisation> getProgramsWithSpecialications() {
 		if (programsWithSpecialications == null) {
-			programsWithSpecialications = new EObjectContainmentEList<ProgramWithSpecialisation>(ProgramWithSpecialisation.class, this, MyEcorePackage.SCHOOL__PROGRAMS_WITH_SPECIALICATIONS);
+			programsWithSpecialications = new EObjectContainmentWithInverseEList<ProgramWithSpecialisation>(ProgramWithSpecialisation.class, this, MyEcorePackage.SCHOOL__PROGRAMS_WITH_SPECIALICATIONS, MyEcorePackage.PROGRAM_WITH_SPECIALISATION__SCHOOL);
 		}
 		return programsWithSpecialications;
 	}
@@ -177,8 +175,12 @@ public class SchoolImpl extends MinimalEObjectImpl.Container implements School {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_NO_SPECIALICATION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProgramsWithNoSpecialication()).basicAdd(otherEnd, msgs);
 			case MyEcorePackage.SCHOOL__STUDENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStudents()).basicAdd(otherEnd, msgs);
+			case MyEcorePackage.SCHOOL__PROGRAMS_WITH_SPECIALICATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProgramsWithSpecialications()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

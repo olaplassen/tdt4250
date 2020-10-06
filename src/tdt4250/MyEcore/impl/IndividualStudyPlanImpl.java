@@ -12,8 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import tdt4250.MyEcore.IndividualStudyPlan;
 import tdt4250.MyEcore.MyEcorePackage;
@@ -90,7 +89,7 @@ public class IndividualStudyPlanImpl extends MinimalEObjectImpl.Container implem
 	 */
 	public EList<SelectedSemester> getSelectedSemesters() {
 		if (selectedSemesters == null) {
-			selectedSemesters = new EObjectContainmentEList<SelectedSemester>(SelectedSemester.class, this, MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS);
+			selectedSemesters = new EObjectContainmentWithInverseEList<SelectedSemester>(SelectedSemester.class, this, MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS, MyEcorePackage.SELECTED_SEMESTER__STUDY_PLAN);
 		}
 		return selectedSemesters;
 	}
@@ -114,6 +113,21 @@ public class IndividualStudyPlanImpl extends MinimalEObjectImpl.Container implem
 		results = newResults;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MyEcorePackage.INDIVIDUAL_STUDY_PLAN__RESULTS, oldResults, results));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MyEcorePackage.INDIVIDUAL_STUDY_PLAN__SELECTED_SEMESTERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSelectedSemesters()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

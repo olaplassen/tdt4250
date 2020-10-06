@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MyEcore:School
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:MyEcore="platform:/plugin/tdt4250/model/my.ecore"
+    xsi:schemaLocation="platform:/plugin/tdt4250/model/my.ecore My.ecore"
+    schoolName="NTNU">
+  <programsWithSpecialications
+      programName="Informatics">
+    <programSpecialicationYear
+        year="2019">
+      <specilisations
+          name="Software">
+        <semesters
+            year="2019">
+          <electiveCourses
+              code="TDT4250"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4251"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4252"
+              credit="7.5"/>
+          <mandatoryCourses
+              code="TDT4253"
+              credit="7.5"/>
+        </semesters>
+        <semesters
+            year="2020"
+            SemesterKind="Fall">
+          <electiveCourses
+              code="TDT4254"
+              credit="7.5"/>
+          <electiveCourses
+              code="TDT4255"
+              credit="7.5"
+              fallOrAutumnCourse="Fall"/>
+          <electiveCourses
+              code="TDT4256"
+              credit="7.5"
+              fallOrAutumnCourse="Fall"/>
+          <electiveCourses
+              code="TDT4257"
+              credit="7.5"
+              fallOrAutumnCourse="Fall"/>
+          <mandatoryCourses
+              code="TDT4254"
+              credit="7.5"/>
+        </semesters>
+      </specilisations>
+    </programSpecialicationYear>
+  </programsWithSpecialications>
+</MyEcore:School>

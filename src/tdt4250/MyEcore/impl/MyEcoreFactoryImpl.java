@@ -267,7 +267,7 @@ public class MyEcoreFactoryImpl extends EFactoryImpl implements MyEcoreFactory {
 	 * @generated NOT
 	 */
 	public String createCourseCodeFromString(EDataType eDataType, String initialValue) {
-		if (! initialValue.matches("[A-Z]+[0-9])+")) {
+		if (! initialValue.matches("\\p{L}+\\d+")) {
 			throw new IllegalArgumentException("Wrong Course code format");
 		}
 		return (String)super.createFromString(eDataType, initialValue);

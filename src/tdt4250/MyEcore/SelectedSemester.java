@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tdt4250.MyEcore.SelectedSemester#getSemesters <em>Semesters</em>}</li>
  *   <li>{@link tdt4250.MyEcore.SelectedSemester#getSemesterName <em>Semester Name</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.SelectedSemester#getStudyPlan <em>Study Plan</em>}</li>
+ *   <li>{@link tdt4250.MyEcore.SelectedSemester#getSelectableCourses <em>Selectable Courses</em>}</li>
  * </ul>
  *
  * @see tdt4250.MyEcore.MyEcorePackage#getSelectedSemester()
@@ -23,22 +25,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SelectedSemester extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Semesters</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Semesters</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Semesters</em>' containment reference.
+	 * @return the value of the '<em>Semesters</em>' reference.
 	 * @see #setSemesters(Semester)
 	 * @see tdt4250.MyEcore.MyEcorePackage#getSelectedSemester_Semesters()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	Semester getSemesters();
 
 	/**
-	 * Sets the value of the '{@link tdt4250.MyEcore.SelectedSemester#getSemesters <em>Semesters</em>}' containment reference.
+	 * Sets the value of the '{@link tdt4250.MyEcore.SelectedSemester#getSemesters <em>Semesters</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Semesters</em>' containment reference.
+	 * @param value the new value of the '<em>Semesters</em>' reference.
 	 * @see #getSemesters()
 	 * @generated
 	 */
@@ -65,5 +67,51 @@ public interface SelectedSemester extends EObject {
 	 * @generated
 	 */
 	void setSemesterName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Study Plan</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link tdt4250.MyEcore.IndividualStudyPlan#getSelectedSemesters <em>Selected Semesters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Study Plan</em>' container reference.
+	 * @see #setStudyPlan(IndividualStudyPlan)
+	 * @see tdt4250.MyEcore.MyEcorePackage#getSelectedSemester_StudyPlan()
+	 * @see tdt4250.MyEcore.IndividualStudyPlan#getSelectedSemesters
+	 * @model opposite="selectedSemesters" transient="false"
+	 * @generated
+	 */
+	IndividualStudyPlan getStudyPlan();
+
+	/**
+	 * Sets the value of the '{@link tdt4250.MyEcore.SelectedSemester#getStudyPlan <em>Study Plan</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Study Plan</em>' container reference.
+	 * @see #getStudyPlan()
+	 * @generated
+	 */
+	void setStudyPlan(IndividualStudyPlan value);
+
+	/**
+	 * Returns the value of the '<em><b>Selectable Courses</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selectable Courses</em>' containment reference.
+	 * @see #setSelectableCourses(Course)
+	 * @see tdt4250.MyEcore.MyEcorePackage#getSelectedSemester_SelectableCourses()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Course getSelectableCourses();
+
+	/**
+	 * Sets the value of the '{@link tdt4250.MyEcore.SelectedSemester#getSelectableCourses <em>Selectable Courses</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selectable Courses</em>' containment reference.
+	 * @see #getSelectableCourses()
+	 * @generated
+	 */
+	void setSelectableCourses(Course value);
 
 } // SelectedSemester

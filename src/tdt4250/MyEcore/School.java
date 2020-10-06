@@ -29,11 +29,13 @@ public interface School extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Programs With No Specialication</b></em>' containment reference list.
 	 * The list contents are of type {@link tdt4250.MyEcore.ProgramWithNoSpecialication}.
+	 * It is bidirectional and its opposite is '{@link tdt4250.MyEcore.ProgramWithNoSpecialication#getSchool <em>School</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Programs With No Specialication</em>' containment reference list.
 	 * @see tdt4250.MyEcore.MyEcorePackage#getSchool_ProgramsWithNoSpecialication()
-	 * @model containment="true"
+	 * @see tdt4250.MyEcore.ProgramWithNoSpecialication#getSchool
+	 * @model opposite="school" containment="true"
 	 * @generated
 	 */
 	EList<ProgramWithNoSpecialication> getProgramsWithNoSpecialication();
@@ -77,11 +79,13 @@ public interface School extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Programs With Specialications</b></em>' containment reference list.
 	 * The list contents are of type {@link tdt4250.MyEcore.ProgramWithSpecialisation}.
+	 * It is bidirectional and its opposite is '{@link tdt4250.MyEcore.ProgramWithSpecialisation#getSchool <em>School</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Programs With Specialications</em>' containment reference list.
 	 * @see tdt4250.MyEcore.MyEcorePackage#getSchool_ProgramsWithSpecialications()
-	 * @model containment="true"
+	 * @see tdt4250.MyEcore.ProgramWithSpecialisation#getSchool
+	 * @model opposite="school" containment="true"
 	 * @generated
 	 */
 	EList<ProgramWithSpecialisation> getProgramsWithSpecialications();

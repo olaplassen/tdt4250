@@ -6,12 +6,13 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="School">
     <eStructuralFeatures xsi:type="ecore:EReference" name="programsWithNoSpecialication"
-        upperBound="-1" eType="#//ProgramWithNoSpecialication" containment="true"/>
+        upperBound="-1" eType="#//ProgramWithNoSpecialication" containment="true"
+        eOpposite="#//ProgramWithNoSpecialication/school"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="schoolName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="students" upperBound="-1"
         eType="#//Student" containment="true" eOpposite="#//Student/school"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="programsWithSpecialications"
-        upperBound="-1" eType="#//ProgramWithSpecialisation" containment="true"/>
+        upperBound="-1" eType="#//ProgramWithSpecialisation" containment="true" eOpposite="#//ProgramWithSpecialisation/school"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Program">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="programName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -28,10 +29,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProgramWithNoSpecialication" eSuperTypes="#//Program">
     <eStructuralFeatures xsi:type="ecore:EReference" name="programYear" upperBound="-1"
         eType="#//Year" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="school" eType="#//School"
+        eOpposite="#//School/programsWithNoSpecialication"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProgramWithSpecialisation" eSuperTypes="#//Program">
     <eStructuralFeatures xsi:type="ecore:EReference" name="programSpecialicationYear"
         upperBound="-1" eType="#//Year" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="school" eType="#//School"
+        eOpposite="#//School/programsWithSpecialications"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialisation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="-1"
@@ -91,12 +96,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndividualStudyPlan">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectedSemesters" upperBound="-1"
-        eType="#//SelectedSemester" containment="true"/>
+        eType="#//SelectedSemester" containment="true" eOpposite="#//SelectedSemester/studyPlan"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="results" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectedSemester">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" eType="#//Semester"
-        containment="true"/>
+    <eOperations name="addCourseToSemester" eType="#//SelectedSemester" eExceptions="#//Course"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" eType="#//Semester"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesterName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="studyPlan" eType="#//IndividualStudyPlan"
+        eOpposite="#//IndividualStudyPlan/selectedSemesters"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectableCourses" eType="#//Course"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

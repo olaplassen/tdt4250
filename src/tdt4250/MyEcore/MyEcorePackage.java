@@ -262,13 +262,22 @@ public interface MyEcorePackage extends EPackage {
 	int PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR = PROGRAM_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>School</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_WITH_NO_SPECIALICATION__SCHOOL = PROGRAM_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Program With No Specialication</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAM_WITH_NO_SPECIALICATION_FEATURE_COUNT = PROGRAM_FEATURE_COUNT + 1;
+	int PROGRAM_WITH_NO_SPECIALICATION_FEATURE_COUNT = PROGRAM_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Program With No Specialication</em>' class.
@@ -317,13 +326,22 @@ public interface MyEcorePackage extends EPackage {
 	int PROGRAM_WITH_SPECIALISATION__PROGRAM_SPECIALICATION_YEAR = PROGRAM_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>School</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_WITH_SPECIALISATION__SCHOOL = PROGRAM_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Program With Specialisation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAM_WITH_SPECIALISATION_FEATURE_COUNT = PROGRAM_FEATURE_COUNT + 1;
+	int PROGRAM_WITH_SPECIALISATION_FEATURE_COUNT = PROGRAM_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Program With Specialisation</em>' class.
@@ -665,7 +683,7 @@ public interface MyEcorePackage extends EPackage {
 	int SELECTED_SEMESTER = 10;
 
 	/**
-	 * The feature id for the '<em><b>Semesters</b></em>' containment reference.
+	 * The feature id for the '<em><b>Semesters</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -683,13 +701,31 @@ public interface MyEcorePackage extends EPackage {
 	int SELECTED_SEMESTER__SEMESTER_NAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Study Plan</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTED_SEMESTER__STUDY_PLAN = 2;
+
+	/**
+	 * The feature id for the '<em><b>Selectable Courses</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTED_SEMESTER__SELECTABLE_COURSES = 3;
+
+	/**
 	 * The number of structural features of the '<em>Selected Semester</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTED_SEMESTER_FEATURE_COUNT = 2;
+	int SELECTED_SEMESTER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Selected Semester</em>' class.
@@ -883,6 +919,17 @@ public interface MyEcorePackage extends EPackage {
 	EReference getProgramWithNoSpecialication_ProgramYear();
 
 	/**
+	 * Returns the meta object for the container reference '{@link tdt4250.MyEcore.ProgramWithNoSpecialication#getSchool <em>School</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>School</em>'.
+	 * @see tdt4250.MyEcore.ProgramWithNoSpecialication#getSchool()
+	 * @see #getProgramWithNoSpecialication()
+	 * @generated
+	 */
+	EReference getProgramWithNoSpecialication_School();
+
+	/**
 	 * Returns the meta object for class '{@link tdt4250.MyEcore.ProgramWithSpecialisation <em>Program With Specialisation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -902,6 +949,17 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProgramWithSpecialisation_ProgramSpecialicationYear();
+
+	/**
+	 * Returns the meta object for the container reference '{@link tdt4250.MyEcore.ProgramWithSpecialisation#getSchool <em>School</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>School</em>'.
+	 * @see tdt4250.MyEcore.ProgramWithSpecialisation#getSchool()
+	 * @see #getProgramWithSpecialisation()
+	 * @generated
+	 */
+	EReference getProgramWithSpecialisation_School();
 
 	/**
 	 * Returns the meta object for class '{@link tdt4250.MyEcore.Specialisation <em>Specialisation</em>}'.
@@ -1184,10 +1242,10 @@ public interface MyEcorePackage extends EPackage {
 	EClass getSelectedSemester();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link tdt4250.MyEcore.SelectedSemester#getSemesters <em>Semesters</em>}'.
+	 * Returns the meta object for the reference '{@link tdt4250.MyEcore.SelectedSemester#getSemesters <em>Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Semesters</em>'.
+	 * @return the meta object for the reference '<em>Semesters</em>'.
 	 * @see tdt4250.MyEcore.SelectedSemester#getSemesters()
 	 * @see #getSelectedSemester()
 	 * @generated
@@ -1204,6 +1262,28 @@ public interface MyEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSelectedSemester_SemesterName();
+
+	/**
+	 * Returns the meta object for the container reference '{@link tdt4250.MyEcore.SelectedSemester#getStudyPlan <em>Study Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Study Plan</em>'.
+	 * @see tdt4250.MyEcore.SelectedSemester#getStudyPlan()
+	 * @see #getSelectedSemester()
+	 * @generated
+	 */
+	EReference getSelectedSemester_StudyPlan();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link tdt4250.MyEcore.SelectedSemester#getSelectableCourses <em>Selectable Courses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Selectable Courses</em>'.
+	 * @see tdt4250.MyEcore.SelectedSemester#getSelectableCourses()
+	 * @see #getSelectedSemester()
+	 * @generated
+	 */
+	EReference getSelectedSemester_SelectableCourses();
 
 	/**
 	 * Returns the meta object for enum '{@link tdt4250.MyEcore.SemesterKind <em>Semester Kind</em>}'.
@@ -1380,6 +1460,14 @@ public interface MyEcorePackage extends EPackage {
 		EReference PROGRAM_WITH_NO_SPECIALICATION__PROGRAM_YEAR = eINSTANCE.getProgramWithNoSpecialication_ProgramYear();
 
 		/**
+		 * The meta object literal for the '<em><b>School</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAM_WITH_NO_SPECIALICATION__SCHOOL = eINSTANCE.getProgramWithNoSpecialication_School();
+
+		/**
 		 * The meta object literal for the '{@link tdt4250.MyEcore.impl.ProgramWithSpecialisationImpl <em>Program With Specialisation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1396,6 +1484,14 @@ public interface MyEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROGRAM_WITH_SPECIALISATION__PROGRAM_SPECIALICATION_YEAR = eINSTANCE.getProgramWithSpecialisation_ProgramSpecialicationYear();
+
+		/**
+		 * The meta object literal for the '<em><b>School</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAM_WITH_SPECIALISATION__SCHOOL = eINSTANCE.getProgramWithSpecialisation_School();
 
 		/**
 		 * The meta object literal for the '{@link tdt4250.MyEcore.impl.SpecialisationImpl <em>Specialisation</em>}' class.
@@ -1618,7 +1714,7 @@ public interface MyEcorePackage extends EPackage {
 		EClass SELECTED_SEMESTER = eINSTANCE.getSelectedSemester();
 
 		/**
-		 * The meta object literal for the '<em><b>Semesters</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Semesters</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1632,6 +1728,22 @@ public interface MyEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SELECTED_SEMESTER__SEMESTER_NAME = eINSTANCE.getSelectedSemester_SemesterName();
+
+		/**
+		 * The meta object literal for the '<em><b>Study Plan</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SELECTED_SEMESTER__STUDY_PLAN = eINSTANCE.getSelectedSemester_StudyPlan();
+
+		/**
+		 * The meta object literal for the '<em><b>Selectable Courses</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SELECTED_SEMESTER__SELECTABLE_COURSES = eINSTANCE.getSelectedSemester_SelectableCourses();
 
 		/**
 		 * The meta object literal for the '{@link tdt4250.MyEcore.SemesterKind <em>Semester Kind</em>}' enum.

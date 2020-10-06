@@ -26,11 +26,13 @@ public interface IndividualStudyPlan extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Selected Semesters</b></em>' containment reference list.
 	 * The list contents are of type {@link tdt4250.MyEcore.SelectedSemester}.
+	 * It is bidirectional and its opposite is '{@link tdt4250.MyEcore.SelectedSemester#getStudyPlan <em>Study Plan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Selected Semesters</em>' containment reference list.
 	 * @see tdt4250.MyEcore.MyEcorePackage#getIndividualStudyPlan_SelectedSemesters()
-	 * @model containment="true"
+	 * @see tdt4250.MyEcore.SelectedSemester#getStudyPlan
+	 * @model opposite="studyPlan" containment="true"
 	 * @generated
 	 */
 	EList<SelectedSemester> getSelectedSemesters();
