@@ -87,6 +87,10 @@ Se the old model pictured below:
 | ProgramSemester  | Contains mandatory and elective courses as well as a year and SemsterKind that tells if it is a Fall or Spring semester. It can contain specializations if the program has specialisations choices in spesific semsters. If the programSemster cotaints inside and specialisation "Current specialisation" is populated. If it contains inside a Year, "Program Year" Is populated. This is done with opposite links. |
 | Specialication  | Inside a ProgramSemster. Contains semsters and has "Specializes In" Populated from the "Program" Class. |
 | Course  | Consists of a code, credit, level and semesterkind to tell when it is tought |
+| SemesterKind | Eenum to define if the semester is in the fall or spinrg |
+| CourseLevel | Eenum to define wich level the course is|
+| CourseCode | Datatype to set constraint on code pattern |
+| Name | Datatype to set constgraint on strings |
 
 # Assignment 2 - Running the transformation
 
