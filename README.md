@@ -43,11 +43,15 @@ Concrete implementation classes of the generated interfaces.
 MyEcoreValidator has generated code but also manually written code for constraints. E.g constraint for name characters and for correct course credit.
 ## Model
 
+# Changes to the model
 
+From assigment 1 several changes was made to the model. To simplify the M2T transformation and because i had trouble finding a workable solution to the Individual studyplan task this was removed and changes were made to to how specilizations inside programmes worked.
+
+Se the old model pictured below:
 
 ### PlantUML
 
-![model](https://github.com/olaplassen/tdt4250/blob/master/img/model.png)
+![model](https://github.com/olaplassen/tdt4250/blob/master/div/old_model.png)
 
 | ENTITY | DESCRIPTION |
 | ------------- | ------------- |
