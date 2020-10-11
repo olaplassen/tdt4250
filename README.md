@@ -1,9 +1,9 @@
 
 # TDT4250 Avasert Programvaredesign
 
-This project is a possible solution for the first and second assignment in the course TDT4250
+Repository for the assignments of the course TDT4250 at NTNU
 
-## Case
+## Case Description
 
 The case is to model a school institution with everything from courses, semesters, programs, specialications and individual studyplans.
 The first Assignment was to get expereience with the aspects of Ecore-modelling and code generation. The following was supposed to be implemented:
@@ -19,7 +19,7 @@ Solution to this assignemnt is found under this folder [/no.tdt4250.model](https
 The goal of the second assignment was to get experience with transformations, the task is to implement a transformation from (an instance of) the model from assignment 1 to a web page corresponding to the study program pages. I decided to use an (M2T) transformation with the M2T language Acceleo. Solution to the assignment can be found under this folder: [/no.tdt4250.m2t](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.m2t)
 
 
-## Project Structure
+## Structure
 
 ### Ecore ([/model](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.model/model))
 
@@ -41,7 +41,7 @@ Concrete implementation classes of the generated interfaces.
 
 #### /util
 MyEcoreValidator has generated code but also manually written code for constraints. E.g constraint for name characters and for correct course credit.
-
+# Assignment 1
 
 ### Constraints implemented
 
@@ -54,7 +54,7 @@ MyEcoreValidator has generated code but also manually written code for constrain
 
 # Changes to the model
 
-From assigment 1 several changes was made to the model. To simplify the M2T transformation and because i had trouble finding a workable solution to the Individual studyplan task this was removed and changes were made to to how specilizations inside programmes worked.
+From assigment 1 several changes was made to the model. To simplify the M2T transformation and because i had trouble finding a workable solution to the Individual studyplan task this was removed and changes were made to to how specilizations inside programmes worked. "Prorgammes With Specialisations" and "Programmes with No specialisations" class were removed and replaced with one  "Specialisation" class that appears inside the semster.
 
 Se the old model pictured below:
 
