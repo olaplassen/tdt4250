@@ -41,7 +41,16 @@ Concrete implementation classes of the generated interfaces.
 
 #### /util
 MyEcoreValidator has generated code but also manually written code for constraints. E.g constraint for name characters and for correct course credit.
-## Model
+
+
+### Constraints implemented
+
+- [x] Correct Year Format
+- [x] Course Type Equals Semester type e.g. Fall Course can only be in an Fall semster
+- [x] Credit in Course can only be spesific values
+- [x] Datatype constraint "Name" to set min and max lengths for several string values
+- [x] Datatytpe constraint for course code with regex pattern
+- [] Same course code can not be inside same semster
 
 # Changes to the model
 
@@ -70,6 +79,6 @@ Se the old model pictured below:
 
 # Assignment 2 - Running the transformation
 
-To run the transformation simply right click on the [/generate.mtl](https://github.com/olaplassen/tdt4250/blob/master/no.tdt4250.m2t/src/no/tdt4250/m2t/main/generate.mtl) file and click "Run as.." -> "Run Configurations".
+To run the transformation simply right click on the [/generate.mtl](https://github.com/olaplassen/tdt4250/blob/master/no.tdt4250.m2t/src/no/tdt4250/m2t/main/generate.mtl) file and click "Run as.." -> "Run Configurations". <br/>
 Add the details as shown in the image below and click run. The generated content is available inside the [/dst_content](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.m2t/dst_code) folder. There the generated html file with the generated instance of my modelm lies as well as the css file used.
 
