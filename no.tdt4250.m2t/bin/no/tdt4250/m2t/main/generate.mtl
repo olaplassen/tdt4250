@@ -1,0 +1,180 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/emf/2002/Ecore', 'platform:/plugin/no.tdt4250.model/programmes.ecore')]
+
+
+[template public generate(aSchool : School)]
+	[comment @main/]
+	[file (aSchool.name.concat('.html'), false, 'UTF-8')]
+		<html>
+			<head>
+				
+				<h1>[aSchool.name/]</h1>
+				<meta charset="utf-8"/>
+				<link rel="stylesheet" href = "styles.css" />
+			</head>
+			<body>
+				<div class="main">
+					[aSchool.name/] offers these programs:
+					[for (program : Program | aSchool.programs)]
+						[generateProgram(program)/]
+					[/for]
+				</div>
+			</body>
+		</html>
+	[/file]
+
+	[file ('styles.css', false, 'UTF-8')]
+* {
+	style = "font-family:courier,arial,helvetica;
+}
+.main {
+	border-style: solid;
+	padding: 5%
+}
+.program {
+	
+}
+
+.years {
+	padding: 3%;
+	border-style: solid;
+}
+
+.semesterCourses{
+	padding: 5%;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 10px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 4px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+	[/file]
+
+[/template]
+
+[template public generateProgram(program : Program)]
+<div class="program"/>
+	<h2> [program.name/] </h2>
+	
+	[for (programYear : Year | program.programYears)]
+		[generateProgramYear(programYear)/]
+		<hr/>
+	[/for]
+	
+</div>
+[/template]
+
+[template public generateProgramYear(programYear : Year)]
+<div class ="years">
+	<h3> Starting Year   [programYear.year/] </h3>
+	
+		[for (programSemster : ProgramSemester | programYear.semesters)]
+		<hr/>	<h4> [i/].semester: </h4> <hr> [generateSemester(programSemster)/] 
+		[/for]
+	
+	
+</div>
+[/template]
+
+[template public generateSemester(programSemester : ProgramSemester)]
+<div class = "semesters">
+	<p><u> [programSemester.SemesterKind/] [programSemester.Year/]</u></p>
+		
+[let semesterHasSpecializations : Boolean = programSemester.specializations.oclAsSet()->size() > 0]
+[let semsterHasCourses : Boolean = programSemester.mandatoryCourses.oclAsSet()->size() + programSemester.electiveCourses.oclAsSet()->size() > 0]
+
+[if (semesterHasSpecializations)]
+
+	<div class "specializations">
+		Available specializations this semster: [programSemester.specializations.oclAsSet()->size()/]
+		
+		[for (specialization : Specialization | programSemester.specializations)]
+			[generateSpecializationNames(specialization)/]
+		[/for]
+		<hr/>
+		<ul>
+		[for (specialization : Specialization | programSemester.specializations)]
+			
+			[generateSpecialization(specialization)/] 
+		[/for]
+		<ul>
+	</div>
+[/if]
+
+[if (semsterHasCourses)]
+	<div class = "semesterCourses">
+		Mandatory:
+		<table>
+			<tr>
+				<th>Code</th>
+				<th>Name</td>
+				<th>Credits</td>
+			</tr>
+			
+			[for (course : Course | programSemester.mandatoryCourses)]
+			
+				[generateCourse(course)/]
+			
+			[/for]
+
+		</table>
+		<br/>
+		Elective:
+		<table>
+			<tr>
+				<th>Code</th>
+				<th>Name</td>
+				<th>Credits</td>
+			</tr>
+			
+			
+			[for (course : Course | programSemester.electiveCourses)]
+				[generateCourse(course)/]
+			[/for]
+			
+		</table>
+
+	</div>
+[/if]
+
+[/let]
+[/let]
+</div>	
+[/template]
+
+[template public generateSpecialization(specialization : Specialization)]
+	<div class = "specializations">
+		<b>[specialization.name/]</b>
+	[for (specializationSemester : ProgramSemester | specialization.semsters)]
+		[generateSemester(specializationSemester)/]
+	[/for]
+	</div>
+[/template]
+
+[template public generateSpecializationNames(specialization : Specialization)]
+	<div class = "specializationsName">
+			<li>[specialization.name/] </li>
+	
+	</div>
+[/template]
+
+
+[template public generateCourse(course : Course)]
+	<tr>
+	<td> [course.code/]</td><td> [course.name/]</td><td> [course.credits/]</td>
+	</tr>
+	
+[/template]

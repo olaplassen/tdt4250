@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programmes:School
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:programmes="platform:/plugin/no.tdt4250.model/programmes.ecore"
+    xsi:schemaLocation="platform:/plugin/no.tdt4250.model/programmes.ecore programmes.ecore"
+    name="NTNU">
+  <programs
+      name="Informatikk">
+    <programYears
+        year="2018">
+      <semesters
+          Year="2018">
+        <specializations
+            specializesIn="//@programs.0"
+            name="Software">
+          <semsters
+              Year="2018">
+            <mandatoryCourses
+                code="TDT4175"
+                name="Informasjonssystemer"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4250"
+                name="Advanced Software Design"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4252"
+                name="Enterprise Architecture"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4165"
+                name="Programming Languages"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4117"
+                name="Information Retrievel"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2019"
+              SemesterKind="Spring">
+            <mandatoryCourses
+                code="IT3010"
+                name="Empirical research methodologies"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TDT4240"
+                name="Software Architecture"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4237"
+                name="Software Security"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4242"
+                name="Advanced Software Engineering"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4257"
+                name="Digital Service Innovation"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <specializations
+                specializesIn="//@programs.0"
+                name="Database and Search">
+              <semsters
+                  Year="2018">
+                <mandatoryCourses
+                    code="TDT4117"
+                    name="Information Retrieval"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4225"
+                    name="Very Large, Distributed Data Volumes"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4237"
+                    name="Software Security"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4287"
+                    name="Algorithms for Bioinformatics"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4136"
+                    name="Introduction to Artificial Intelligence"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="IT2810"
+                    name="Web Development"
+                    credits="7.5"/>
+              </semsters>
+              <semsters
+                  Year="2019"
+                  SemesterKind="Spring">
+                <mandatoryCourses
+                    code="IT3010"
+                    name="Empirical research methodologies"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <mandatoryCourses
+                    code="TDT4300"
+                    name="Data Warehousing and Data Mining"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4150"
+                    name="Advanced Database Management Systems"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4305"
+                    name="Big Data Architecture"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="IT3020"
+                    name="Current Topics in Informatics"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="IT3030"
+                    name="Deep Learning"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+              </semsters>
+            </specializations>
+          </semsters>
+        </specializations>
+      </semesters>
+      <semesters
+          Year="2019">
+        <specializations
+            specializesIn="//@programs.0"
+            name="Software">
+          <semsters
+              Year="2019">
+            <mandatoryCourses
+                code="IT3915"
+                name="Master in Informatics, Preparatory Project"
+                credits="15.0"/>
+            <electiveCourses
+                code="IT3020"
+                name="Current Topics in Informatics"
+                credits="7.5"/>
+            <electiveCourses
+                code="IT3021"
+                name="Game+"
+                credits="7.5"/>
+            <electiveCourses
+                code="IT3023"
+                name="Learning Technology and Analytics"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2020"
+              SemesterKind="Spring">
+            <mandatoryCourses
+                code="IT3920"
+                name="Master Thesis for MSIT"
+                courseSemesterType="Spring"
+                credits="30.0"/>
+          </semsters>
+        </specializations>
+        <specializations
+            specializesIn="//@programs.0"
+            name="Database and Search">
+          <semsters
+              Year="2019">
+            <mandatoryCourses
+                code="IT3915"
+                name="Master in Informatics, Preparatory Project"
+                credits="15.0"/>
+            <electiveCourses
+                code="TDT4225"
+                name="Very Large, Distributed Data Volumes"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2020"
+              SemesterKind="Spring">
+            <mandatoryCourses
+                code="IT3920"
+                name="Master Thesis for MSIT"
+                courseSemesterType="Spring"
+                credits="30.0"/>
+          </semsters>
+        </specializations>
+      </semesters>
+    </programYears>
+  </programs>
+  <programs
+      name="Datateknologi">
+    <programYears
+        year="2016">
+      <semesters
+          Year="2016">
+        <mandatoryCourses
+            code="EXPH0004"
+            name="Examen philosophicum"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TDT4110"
+            name="Informasjonsteknologi"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TMA4100"
+            name="Matematikk 1"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TMA4140"
+            name="Diskret matematikk"
+            credits="7.5"/>
+      </semesters>
+      <semesters
+          Year="2017"
+          SemesterKind="Spring">
+        <mandatoryCourses
+            code="TDT4100"
+            name="Objektorientert programmering"
+            courseSemesterType="Spring"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TDT4112"
+            name="Programmeringslab for datateknologi"
+            courseSemesterType="Spring"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TFE4101"
+            name="Krets- og digitalteknikk"
+            courseSemesterType="Spring"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TMA4115"
+            name="Matematikk 3"
+            courseSemesterType="Spring"
+            credits="7.5"/>
+      </semesters>
+      <semesters
+          Year="2017">
+        <mandatoryCourses
+            code="TDT4113"
+            name="Datateknologi, programmeringsprosjekt"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TDT4120"
+            name="Algoritmer og datastrukturer"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TDT4160"
+            name="Datamaskiner og digitalteknikk"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TMA4240"
+            name="Statistikk"
+            credits="7.5"/>
+      </semesters>
+      <semesters
+          Year="2018"
+          SemesterKind="Spring">
+        <mandatoryCourses
+            code="TDT4140"
+            name="Programvareutvikling"
+            courseSemesterType="Spring"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TDT4145"
+            name="Datamodellering og databasesystemer"
+            courseSemesterType="Spring"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TDT4180"
+            name="Menneskemaskin-interaksjon"
+            courseSemesterType="Spring"
+            credits="7.5"/>
+        <mandatoryCourses
+            code="TTM4100"
+            name="Kommunikasjon - Tjenester og nett"
+            courseSemesterType="Spring"
+            credits="7.5"/>
+      </semesters>
+      <semesters
+          Year="2018">
+        <specializations
+            specializesIn="//@programs.1"
+            name="Algorithms and computers">
+          <semsters
+              Year="2018">
+            <mandatoryCourses
+                code="TDT4136"
+                name="Introduksjon til kunstig intelligens"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TDT4258"
+                name="Maskinnær programmering"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TMA4135"
+                name="Matematikk 4D"
+                credits="7.5"/>
+            <electiveCourses
+                code="IT2810"
+                name="Webutvikling"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4117"
+                name="Informasjonsgjenfinning"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2019"
+              SemesterKind="Spring">
+            <mandatoryCourses
+                code="TDT4186"
+                name="Operativsystemer"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TDT4205"
+                name="Kompilatorteknikk"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TFY4125"
+                name="Fysikk"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TIØ4258"
+                name="Teknologiledelse"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2019">
+            <specializations
+                specializesIn="//@programs.0"
+                name="Algorithms and HPC">
+              <semsters
+                  Year="2019">
+                <mandatoryCourses
+                    code="TDT4290"
+                    name="Kundestyrt prosjekt"
+                    credits="15.0"/>
+                <mandatoryCourses
+                    code="TDT4295"
+                    name="Datamaskinprosjekt"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="AAR4250"
+                    name="Arkitektur som teknologisk praksis"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="BSOL4610"
+                    name="Strategi og endring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="FI3107"
+                    name="Bioteknologi og etikk"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="FI5205"
+                    name="Corporate Responsibility and Ethics"
+                    credits="7.5"/>
+              </semsters>
+              <semsters
+                  Year="2020"
+                  SemesterKind="Spring">
+                <mandatoryCourses
+                    code="TDT4230"
+                    name="Grafikk og visualisering"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <mandatoryCourses
+                    code="TDT4125"
+                    name="Algoritmekonstruksjon"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4230"
+                    name="Grafikk og visualisering"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4237"
+                    name="Programvaresikkerhet"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4260"
+                    name="Datamaskinarkitektur"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4265"
+                    name="Datasyn og dyp læring"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+              </semsters>
+              <semsters
+                  Year="2020">
+                <mandatoryCourses
+                    code="TDT4501"
+                    name="Datateknologi, fordypningsprosjekt"
+                    credits="15.0"/>
+                <mandatoryCourses
+                    code="TDT4506"
+                    name="Datateknologi, fordypningsemne"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="Arkitektur som teknologisk praksis"
+                    name="Arkitektur som teknologisk praksis"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="BSOL4610"
+                    name="Strategi og endring i teknologibedrifter"
+                    credits="7.5"/>
+              </semsters>
+              <semsters
+                  Year="2021"
+                  SemesterKind="Spring">
+                <mandatoryCourses
+                    code="TDT4900"
+                    name="Datateknologi, masteroppgave"
+                    courseSemesterType="Spring"
+                    credits="30.0"/>
+              </semsters>
+            </specializations>
+            <specializations
+                name="Vizual computing">
+              <semsters
+                  Year="2019">
+                <mandatoryCourses
+                    code="TDT4290"
+                    name="Kundestyrt prosjekt"
+                    credits="15.0"/>
+                <mandatoryCourses
+                    code="TDT4200"
+                    name="Parallelle beregninger"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="AAR4250"
+                    name="Arkitektur som teknologisk praksis"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="BSOL4610"
+                    name="Strategi og endring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="FI3107"
+                    name="Bioteknologi og etikk"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="FI5205"
+                    name="Corporate Responsibility and Ethics"
+                    credits="7.5"/>
+              </semsters>
+              <semsters
+                  Year="2020"
+                  SemesterKind="Spring">
+                <mandatoryCourses
+                    code="TDT4125"
+                    name="Algoritmekonstruksjon"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4230"
+                    name="Grafikk og visualisering"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4237"
+                    name="Programvaresikkerhet"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4260"
+                    name="Datamaskinarkitektur"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="TDT4265"
+                    name="Datasyn og dyp læring"
+                    courseSemesterType="Spring"
+                    credits="7.5"/>
+              </semsters>
+              <semsters
+                  Year="2020">
+                <mandatoryCourses
+                    code="TDT4501"
+                    name="Datateknologi, fordypningsprosjekt"
+                    credits="15.0"/>
+                <mandatoryCourses
+                    code="TDT4506"
+                    name="Datateknologi, fordypningsemne"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="Arkitektur som teknologisk praksis"
+                    name="Arkitektur som teknologisk praksis"
+                    credits="7.5"/>
+                <electiveCourses
+                    code="BSOL4610"
+                    name="Strategi og endring i teknologibedrifter"
+                    credits="7.5"/>
+              </semsters>
+              <semsters
+                  Year="2021"
+                  SemesterKind="Spring">
+                <mandatoryCourses
+                    code="TDT4900"
+                    name="Datateknologi, masteroppgave"
+                    courseSemesterType="Spring"
+                    credits="30.0"/>
+              </semsters>
+            </specializations>
+          </semsters>
+        </specializations>
+        <specializations
+            specializesIn="//@programs.1"
+            name="Database and search">
+          <semsters
+              Year="2018">
+            <mandatoryCourses
+                code="TDT4117"
+                name="Informasjonsgjenfinning"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TDT4136"
+                name="Introduksjon til kunstig intelligens"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TMA4135"
+                name="Matematikk 4D"
+                credits="7.5"/>
+            <electiveCourses
+                code="IT2810"
+                name="Webutvikling"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4137"
+                name="Kognitive arkitekturer"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2019"
+              SemesterKind="Spring">
+            <mandatoryCourses
+                code="TDT4186"
+                name="Operativsystemer"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TDT4300"
+                name="Datavarehus og datagruvedrift"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TFY4125"
+                name="Fysikk"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TIØ4258"
+                name="Teknologiledelse"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2019">
+            <mandatoryCourses
+                code="TDT4225"
+                name="Store, distribuerte datamengder"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="TDT4290"
+                name="Kundestyrt prosjekt"
+                credits="15.0"/>
+            <electiveCourses
+                code="AAR4250"
+                name="Arkitektur som teknologisk praksis"
+                credits="7.5"/>
+            <electiveCourses
+                code="FI3107"
+                name="Bioteknologi og etikk"
+                credits="7.5"/>
+            <electiveCourses
+                code="FI5206"
+                name="Technology for a Good Society"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2020"
+              SemesterKind="Spring">
+            <mandatoryCourses
+                code="TDT4305"
+                name="Big Data-arkitektur"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4150"
+                name="Avanserte databasesystemer"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4215"
+                name="Anbefalingssystemer"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4237"
+                name="Programvaresikkerhet"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <electiveCourses
+                code="TDT4265"
+                name="Datasyn og dyp læring"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+            <electiveCourses
+                code="TTM4135"
+                name="Anvendt kryptografi og nettverksikkerhet"
+                courseSemesterType="Spring"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2020">
+            <mandatoryCourses
+                code="TDT4501"
+                name="Datateknologi, fordypningsprosjekt"
+                credits="15.0"/>
+            <mandatoryCourses
+                code="TDT4506"
+                name="Datateknologi, fordypningsemne"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="Arkitektur som teknologisk praksis"
+                name="Arkitektur som teknologisk praksis"
+                credits="7.5"/>
+            <mandatoryCourses
+                code="BSOL4610"
+                name="Strategi og endring i teknologibedrifter"
+                credits="7.5"/>
+          </semsters>
+          <semsters
+              Year="2021"
+              SemesterKind="Spring">
+            <mandatoryCourses
+                code="TDT4900"
+                name="Datateknologi, masteroppgave"
+                courseSemesterType="Spring"
+                credits="30.0"/>
+          </semsters>
+        </specializations>
+      </semesters>
+    </programYears>
+  </programs>
+</programmes:School>

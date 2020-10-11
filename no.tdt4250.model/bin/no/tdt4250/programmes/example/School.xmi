@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programmes:School
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:programmes="platform:/plugin/no.tdt4250.model/programmes.ecore"
+    xsi:schemaLocation="platform:/plugin/no.tdt4250.model/programmes.ecore programmes.ecore"
+    name="NTNU">
+  <programs
+      name="Informatikk">
+    <programYears
+        year="2018">
+      <semesters
+          Year="2018">
+        <specializations
+            specializesIn="//@programs.0"
+            name="AI">
+          <semsters
+              Year="2018">
+            <mandatoryCourses
+                code="TDT4250"
+                name="Avansert Programvaredesign"/>
+            <electiveCourses
+                code="TDT4251"
+                name="Informasjonssystemer"/>
+          </semsters>
+          <semsters
+              Year="2018"
+              SemesterKind="Spring"/>
+        </specializations>
+        <specializations
+            specializesIn="//@programs.0"
+            name="Software"/>
+        <specializations
+            specializesIn="//@programs.0"
+            name="Databaser"/>
+      </semesters>
+      <semesters
+          Year="2019"/>
+    </programYears>
+  </programs>
+</programmes:School>
