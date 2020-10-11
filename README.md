@@ -58,7 +58,6 @@ From assigment 1 several changes was made to the model. To simplify the M2T tran
 
 Se the old model pictured below:
 
-### PlantUML
 
 ![model](https://github.com/olaplassen/tdt4250/blob/master/div/old_model.png)
 
@@ -76,6 +75,16 @@ Se the old model pictured below:
 | IndividualStudyPlan | Has an attribute for results and links to the selected semsters  |
 | SelectedSemester | Here will the student be able to chooce among the selected semsters for its program. <b>NOTE</b>: still a lot of work to be done on the individual studyplan "line"  |
 
+New Model IMG <br/>
+
+| ENTITY | DESCRIPTION |
+| ------------- | ------------- |
+| School  | Top level entity and includes multiple Programs |
+| Program  | Consists of a name and a credit requirement, has one school and several ProgramYears  |
+| Year | The conent of a program can change through time and it has several starting years. The conntent of Program and can change with the Year  Class  |
+| ProgramSemester  | Contains mandatory and elective courses as well as a year and SemsterKind that tells if it is a Fall or Spring semester. It can contain specializations if the program has specialisations choices in spesific semsters. If the programSemster cotaints inside and specialisation "Current specialisation" is populated. If it contains inside a Year, "Program Year" Is populated. This is done with opposite links. |
+| Specialication  | Inside a ProgramSemster. Contains semsters and has "Specializes In" Populated from the "Program" Class. |
+| Course  | Consists of a code, credit, level and semesterkind to tell when it is tought |
 
 # Assignment 2 - Running the transformation
 
