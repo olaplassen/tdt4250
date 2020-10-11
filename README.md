@@ -40,7 +40,7 @@ The folder contains the code generated from the .genmodel file. The code that ha
 Concrete implementation classes of the generated interfaces. 
 
 #### /util
-MyEcoreValidator has generated code but also manually written code for constraints. E.g constraint for name characters and for correct course credit.
+ProgrammesValidator has generated code but also manually written code for constraints. E.g constraint for correct course credit.
 # Assignment 1
 
 ### Constraints implemented
