@@ -67,7 +67,7 @@ tr:nth-child(even) {
 
 [template public generateProgram(program : Program)]
 <div class="program"/>
-	<h2> [program.name/] </h2>
+	<h2> [program.name/] </h2> Required credits: [program.creditRequirment/] 
 	
 	[for (programYear : Year | program.programYears)]
 		[generateProgramYear(programYear)/]
