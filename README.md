@@ -21,18 +21,18 @@ The goal of the second assignment was to get experience with transformations, th
 
 ## Project Structure
 
-### Ecore ([/model](https://github.com/olaplassen/tdt4250/tree/master/model))
+### Ecore ([/model](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.model/model))
 
-My.ecore <br/>
+programmes.ecore <br/>
 The file describes the releationship between each entity as well as information about the entities themselces. There is also other information such as constraints. 
 
-My.genmodel <br/>
+programmes.genmodel <br/>
 This file uses the information from the ecore file to generate source code such as Java-classes of the modelled entities.
 
 School.xmi<br/>
 This file uses the model created in the ecore model to create instances of the entities and se the how the releations between them work.
 
-## Code ([/src](https://github.com/olaplassen/tdt4250/tree/master/src/tdt4250/MyEcore))
+## Code ([/src](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.model/src/tdt4250/programmes))
 
 The folder contains the code generated from the .genmodel file. The code that has been written manually or edited are marked with #generated NOT
 
@@ -42,6 +42,8 @@ Concrete implementation classes of the generated interfaces.
 #### /util
 MyEcoreValidator has generated code but also manually written code for constraints. E.g constraint for name characters and for correct course credit.
 ## Model
+
+
 
 ### PlantUML
 
