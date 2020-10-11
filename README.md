@@ -50,7 +50,7 @@ MyEcoreValidator has generated code but also manually written code for constrain
 - [x] Credit in Course can only be spesific values
 - [x] Datatype constraint "Name" to set min and max lengths for several string values
 - [x] Datatytpe constraint for course code with regex pattern
-- [] Same course code can not be inside same semster
+- [ ] Same course code can not be inside same semster
 
 # Changes to the model
 
