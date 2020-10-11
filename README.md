@@ -75,6 +75,8 @@ Se the old model pictured below:
 | IndividualStudyPlan | Has an attribute for results and links to the selected semsters  |
 | SelectedSemester | Here will the student be able to chooce among the selected semsters for its program. <b>NOTE</b>: still a lot of work to be done on the individual studyplan "line"  |
 
+<br/>
+//changes
 <br/><br/>
 
 ![model2](https://github.com/olaplassen/tdt4250/blob/master/div/new_model.png)
