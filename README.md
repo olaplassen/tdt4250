@@ -1,12 +1,20 @@
 
 # TDT4250 Avasert Programvaredesign
 
-This project is a possible solution for the first assignment in the course TDT4250
+This project is a possible solution for the first and second assignment in the course TDT4250
 
 ## Case
 
-The case is to model a school institution with everything from courses, semesters, programs, specialications to students and individual studyplans.
+The case is to model a school institution with everything from courses, semesters, programs, specialications and individual studyplans.
+The first Assignment was to get expereience with the aspects of Ecore-modelling and code generation. The following was supposed to be implemented:
 
+- Study Plans with semesters, courses, and gropus of courses
+- Specializations inside programmes
+- Classes and datatypes
+- Attributes and references
+- Constraints
+
+Solution to this assignemnt is found under ([/here](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.model))
 ## Project Structure
 
 ### Ecore ([/model](https://github.com/olaplassen/tdt4250/tree/master/model))
