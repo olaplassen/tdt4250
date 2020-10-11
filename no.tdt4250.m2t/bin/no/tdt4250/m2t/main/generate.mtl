@@ -102,12 +102,13 @@ tr:nth-child(even) {
 		Available specializations this semster: [programSemester.specializations.oclAsSet()->size()/]
 		
 		[for (specialization : Specialization | programSemester.specializations)]
-			[generateSpecializationNames(specialization)/]
+			<b>[generateSpecializationNames(specialization)/]</b>
+				<a href="#specialisation_[i/]">Click here to see the semesters for this specialisation</a>
 		[/for]
 		<hr/>
 		<ul>
 		[for (specialization : Specialization | programSemester.specializations)]
-			
+			<a id="specialisation_[i/]">Specialisation in [specialization.specializesIn.name/]</a>
 			[generateSpecialization(specialization)/] 
 		[/for]
 		<ul>
@@ -115,6 +116,11 @@ tr:nth-child(even) {
 [/if]
 
 [if (semsterHasCourses)]
+[let semsterHasElectiveCourses : Boolean = true]
+	[if (programSemester.electiveCourses.oclAsSet()->size() > 0)]
+		
+	[/if]
+
 	<div class = "semesterCourses">
 		Mandatory:
 		<table>
@@ -132,7 +138,8 @@ tr:nth-child(even) {
 
 		</table>
 		<br/>
-		Elective:
+		[if (programSemester.electiveCourses.oclAsSet()->size() > 0)]
+			Elective:
 		<table>
 			<tr>
 				<th>Code</th>
@@ -146,8 +153,13 @@ tr:nth-child(even) {
 			[/for]
 			
 		</table>
+		[else]
+			This semester has no elective courses.
+		[/if]
+		
 
 	</div>
+[/let]
 [/if]
 
 [/let]
@@ -162,12 +174,14 @@ tr:nth-child(even) {
 		[generateSemester(specializationSemester)/]
 	[/for]
 	</div>
+<hr/>
 [/template]
 
 [template public generateSpecializationNames(specialization : Specialization)]
 	<div class = "specializationsName">
+			<br/>
 			<li>[specialization.name/] </li>
-	
+			
 	</div>
 [/template]
 
@@ -176,5 +190,6 @@ tr:nth-child(even) {
 	<tr>
 	<td> [course.code/]</td><td> [course.name/]</td><td> [course.credits/]</td>
 	</tr>
+
 	
 [/template]

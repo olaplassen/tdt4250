@@ -16,6 +16,7 @@
         eType="#//Year" containment="true" eOpposite="#//Year/program"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="school" eType="#//School"
         eOpposite="#//School/programs"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creditRequirment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Year">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -34,7 +35,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializesIn" eType="#//Program"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//Name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semsters" upperBound="-1"
-        eType="#//ProgramSemester" containment="true" eOpposite="#//ProgramSemester/rootProgram"/>
+        eType="#//ProgramSemester" containment="true" eOpposite="#//ProgramSemester/currentSpecialisation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesterSpecialization"
         eType="#//ProgramSemester" eOpposite="#//ProgramSemester/specializations"/>
   </eClassifiers>
@@ -55,8 +56,8 @@
         eOpposite="#//Year/semesters"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
         eType="#//Specialization" containment="true" eOpposite="#//Specialization/semesterSpecialization"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rootProgram" eType="#//Specialization"
-        eOpposite="#//Specialization/semsters"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentSpecialisation"
+        eType="#//Specialization" eOpposite="#//Specialization/semsters"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Course">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -69,15 +70,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseSemesterType" eType="#//SemesterKind"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//CourseLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SemesterKind">
-    <eLiterals name="Autmn" value="1"/>
+    <eLiterals name="Fall" value="1"/>
     <eLiterals name="Spring" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CourseLevel">
     <eLiterals name="ThirdYearLevel" value="1"/>
-    <eLiterals name="SecondYearLevel" value="2"/>
-    <eLiterals name="HigherDegreeLevel" value="3"/>
+    <eLiterals name="HigherDegreeLevel" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="CourseCode" instanceClassName="java.lang.String">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
