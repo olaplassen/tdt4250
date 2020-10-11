@@ -15,6 +15,10 @@ The first Assignment was to get expereience with the aspects of Ecore-modelling 
 - Constraints
 
 Solution to this assignemnt is found under this folder [/no.tdt4250.model](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.model)
+
+The goal of the second assignment was to get experience with transformations, the task is to implement a transformation from (an instance of) the model from assignment 1 to a web page corresponding to the study program pages. I decided to use an (M2T) transformation with the M2T language Acceleo. Solution to the assignment can be found under this folder: [/no.tdt4250.m2t](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.m2t)
+
+
 ## Project Structure
 
 ### Ecore ([/model](https://github.com/olaplassen/tdt4250/tree/master/model))
