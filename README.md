@@ -14,7 +14,7 @@ The first Assignment was to get expereience with the aspects of Ecore-modelling 
 - Attributes and references
 - Constraints
 
-Solution to this assignemnt is found under ([/here](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.model))
+Solution to this assignemnt is found under [/here](https://github.com/olaplassen/tdt4250/tree/master/no.tdt4250.model)
 ## Project Structure
 
 ### Ecore ([/model](https://github.com/olaplassen/tdt4250/tree/master/model))
