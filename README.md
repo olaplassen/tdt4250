@@ -1,5 +1,5 @@
 
-# TDT4250 Avasert Programvaredesign
+# TDT4250 Avavsert Programvaredesign
 
 Repository for the assignments of the course TDT4250 at NTNU
 
